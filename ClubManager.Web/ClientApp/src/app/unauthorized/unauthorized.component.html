@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div class="abs-center wd-xl">
+        <!-- START card-->
+        <div class="text-center mb-4">
+			<p class="text-lg mb3">{{ 'common.error.unauthorized' | translate | uppercase }}</p>
+            <p>{{ 'common.error.nopermissionsforthispage' | translate }}.</p>
+        </div>
+        
+        <ul class="list-inline text-center text-sm mb-4">
+            <li class="list-inline-item">
+                <button class="btn btn-outline-secondary btn-sm text-muted" type="button" (click)="redirectToApp()" btnCheckbox>
+                    {{'common.button.gotoapp' | translate}} 
+                    </button>
+            </li>
+            <li class="list-inline-item">
+                <button class="btn btn-outline-secondary btn-sm text-muted" type="button" (click)="redirectToLogin()" btnCheckbox>
+			    {{'common.button.login' | translate}} 
+	            </button>
+            </li>
+        </ul>
+
+    </div>
+</div>

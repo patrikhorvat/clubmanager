@@ -1,0 +1,1 @@
+﻿dotnet ef dbcontext scaffold "Server=.;Database=ClubManager;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Entities

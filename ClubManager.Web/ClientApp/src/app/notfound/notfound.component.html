@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div class="abs-center wd-xl">
+        <!-- START card-->
+        <div class="text-center mb-4">
+            <div class="text-lg mb-3">404</div>
+            <p class="lead m0">{{ 'common.error.wecouldntfindthispage' | translate }}.</p>
+            <p>{{ 'common.error.thepagedoesnotexist' | translate }}.</p>
+        </div>
+       
+        <ul class="list-inline text-center text-sm mb-4">
+            <li class="list-inline-item">
+                <button class="btn btn-outline-secondary btn-sm text-muted" type="button" (click)="redirectToApp()" btnCheckbox>
+                    {{'common.button.gotoapp' | translate}} 
+                    </button>
+            </li>
+            <li class="list-inline-item">
+                <button class="btn btn-outline-secondary  btn-sm text-muted" type="button" (click)="redirectToLogin()" btnCheckbox>
+			    {{'common.button.login' | translate}} 
+	            </button>
+            </li>
+        </ul>
+
+    </div>
+</div>
