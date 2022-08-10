@@ -3,10 +3,10 @@ i:{00000000-0000-0000-0000-000000000000}:ClubManager.sln
 ++CloudManager.Api
 i:{00000000-0000-0000-0000-000000000000}:CloudManager.Api
 ++Connected Services 
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>34392
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>38610
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:>159434
 ++Dependencies
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>34162
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>38609
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:>159433
 ++Properties
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\properties\
@@ -60,18 +60,39 @@ i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubm
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\entities\vasset.cs
 ++Workplace.cs
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\entities\workplace.cs
+++Mapping
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\mapping\
+++SharedMapper.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\mapping\sharedmapper.cs
 ++Models
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\
+++AuthInfo.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\authinfo.cs
+++IRequest.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\irequest.cs
+++IResponse.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\iresponse.cs
 ++LoginModel.cs
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\loginmodel.cs
+++OverviewRequest.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\overviewrequest.cs
+++OverviewResponse.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\overviewresponse.cs
+++QueryParams.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\queryparams.cs
 ++RegisterModel.cs
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\registermodel.cs
+++RequestBase.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\requestbase.cs
 ++Response.cs
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\response.cs
+++ResponseBase.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\responsebase.cs
 ++Repositories
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\repositories\
 ++Impl
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\repositories\impl\
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\helpers\impl\
 ++EmployeeRepository.cs
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\repositories\impl\employeerepository.cs
 ++UserRepository.cs
@@ -96,7 +117,7 @@ i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubm
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\readme.md
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\readme.md
 ++No service dependencies discovered
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>34402
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>38611
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:>159435
 ++Analyzers
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:analyzers
@@ -146,24 +167,26 @@ i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubm
 ++Microsoft.NETCore.App
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\microsoft.netcore.app
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\microsoft.netcore.app
+++Dapper (2.0.123)
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159488
 ++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.7)
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159461
-++Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.7)
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159460
-++Microsoft.EntityFrameworkCore (6.0.7)
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159455
-++Microsoft.EntityFrameworkCore.Design (6.0.7)
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159457
-++Microsoft.EntityFrameworkCore.SqlServer (6.0.7)
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159456
-++Microsoft.EntityFrameworkCore.Tools (6.0.7)
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159463
-++Microsoft.Extensions.Configuration (6.0.1)
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159462
-++Swashbuckle.AspNetCore (6.4.0)
-i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159458
-++Swashbuckle.AspNetCore.Swagger (6.4.0)
 i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159459
+++Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.7)
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159458
+++Microsoft.EntityFrameworkCore (6.0.7)
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159453
+++Microsoft.EntityFrameworkCore.Design (6.0.7)
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159455
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.7)
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159454
+++Microsoft.EntityFrameworkCore.Tools (6.0.7)
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159461
+++Microsoft.Extensions.Configuration (6.0.1)
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159460
+++Swashbuckle.AspNetCore (6.4.0)
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159456
+++Swashbuckle.AspNetCore.Swagger (6.4.0)
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:>159457
 ++ClubManager.Web
 i:{00000000-0000-0000-0000-000000000000}:ClubManager.Web
 ++wwwroot
@@ -209,6 +232,25 @@ i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubm
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\notfound\
 ++routes
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\
+++home
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home\
+++home.component.html
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home\home.component.html
+++home.component.scss
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home\home.component.scss
+++home.component.spec.ts
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home\home.component.spec.ts
+++home.component.ts
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home\home.component.ts
+++home.module.ts
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home.module.ts
+++menu.ts
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\menu.ts
+++routes.module.ts
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\routes.module.ts
+++routes.ts
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\routes.ts
 ++shared
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\shared\
 ++colors
@@ -279,7 +321,6 @@ i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubm
 ++Startup.cs
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\startup.cs
 ++WeatherForecast.cs
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\weatherforecast.cs
 ++protractor.conf.js
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\e2e\protractor.conf.js
 ++login
@@ -365,15 +406,6 @@ i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubm
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\notfound\notfound.module.ts
 ++notfound-routing.module.ts
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\notfound\notfound-routing.module.ts
-++home
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home\
-++menu.ts
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\menu.ts
-++routes.module.ts
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\routes.module.ts
-++routes.ts
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\routes.ts
 ++colors.service.ts
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\shared\colors\colors.service.ts
 ++inbusyspinner.component.html
@@ -440,13 +472,12 @@ i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubm
 ++tsconfig.spec.json
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\tsconfig.spec.json
 ++WeatherForecastController.cs
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\controllers\weatherforecastcontroller.cs
 ++_ViewImports.cshtml
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\pages\_viewimports.cshtml
 ++Error.cshtml
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\pages\error.cshtml
 ++Microsoft.AspNetCore.SpaServices.Extensions (3.0.0)
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:>159444
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:>159470
 ++app.e2e-spec.ts
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\e2e\src\app.e2e-spec.ts
 ++app.po.ts
@@ -527,8 +558,6 @@ i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubm
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\layout\sidebar\userblock\userblock.service.spec.ts
 ++userblock.service.ts
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\layout\sidebar\userblock\userblock.service.ts
-++home.module.ts
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home.module.ts
 ++checkall.directive.ts
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\shared\directives\checkall\checkall.directive.ts
 ++easypiechart.directive.ts
@@ -792,14 +821,6 @@ i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubm
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\assets\server\mails.json
 ++Error.cshtml.cs
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\pages\error.cshtml.cs
-++home.component.html
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home\home.component.html
-++home.component.scss
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home\home.component.scss
-++home.component.spec.ts
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home\home.component.spec.ts
-++home.component.ts
-i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\routes\home\home\home.component.ts
 ++_background-variant.scss
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\shared\styles\bootstrap\mixins\_background-variant.scss
 ++_border-radius.scss
@@ -1522,3 +1543,39 @@ i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubm
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\assets\codemirror\mode\z80\z80.js
 ++style.css
 i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\assets\codemirror\source\css\style.css
+++EmployeeModel.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\employeemodel.cs
+++UserModel.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\usermodel.cs
+++StatusModel.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\statusmodel.cs
+++ClubModel.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\models\clubmodel.cs
+++NewFolder
+++DtoObjects
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\dtoobjects\
+++EmployeeDto.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\dtoobjects\employeedto.cs
+++UserController.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\controllers\usercontroller.cs
+++Helpers
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\helpers\
+++ClaimPrincipalHelper.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\helpers\claimprincipalhelper.cs
+++IConfigurationHelper.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\helpers\iconfigurationhelper.cs
+++ConfigurationHelper.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\helpers\impl\configurationhelper.cs
+++ClubMapper.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\mapping\clubmapper.cs
+++UserMapper.cs
+i:{b32711e2-3bfb-4e80-b0e0-356ac2bd2f74}:c:\users\phorvat\documents\github\clubmanager\cloudmanager.api\mapping\usermapper.cs
+++employees
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\employees\
+++employee-overview.component.html
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\employees\employee-overview.component.html
+++employee-overview.component.ts
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\employees\employee-overview.component.ts
+++employee-overview-gridservice.ts
+++employee-overview-grid.service.ts
+i:{f20045fa-40b4-4760-af18-b78a64f3bb70}:c:\users\phorvat\documents\github\clubmanager\clubmanager.web\clientapp\src\app\employees\employee-overview-grid.service.ts

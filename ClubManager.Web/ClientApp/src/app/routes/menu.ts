@@ -22,6 +22,12 @@ const trainers = {
   icon: 'icon-home'
 };
 
+const employees = {
+  text: 'Zaposlenici',
+  link: '/home',
+  icon: 'icon-home'
+};
+
 const asset = {
   text: 'Imovina',
   link: '/home',
@@ -33,5 +39,6 @@ export const menu = [
   Home,
   players,
   trainers,
+  employees,
     asset
 ];

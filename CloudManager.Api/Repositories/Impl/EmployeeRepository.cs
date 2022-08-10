@@ -4,6 +4,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Dapper;
 using CloudManager.Api.DtoObjects;
+using CloudManager.Api.Helpers;
 
 namespace CloudManager.Api.Repositories.Impl
 {
@@ -11,16 +12,16 @@ namespace CloudManager.Api.Repositories.Impl
     {
         private readonly ILogger<EmployeeRepository> _logger;
         private readonly ClubManagerContext _dbContext;
-        private readonly string _connectionString;
+        private readonly IConfigurationHelper _configurationHelper;
 
         public EmployeeRepository(
             ClubManagerContext dbContext,
             ILogger<EmployeeRepository> logger,
-            string connectionString)
+            IConfigurationHelper configurationHelper)
         {
             _dbContext = dbContext;
             _logger = logger;
-            _connectionString = connectionString;
+            _configurationHelper = configurationHelper;
         }
 
         public async Task<Employee?> FindById(int id)
@@ -41,8 +42,9 @@ namespace CloudManager.Api.Repositories.Impl
             };
             try
             {
+                var connectionString = _configurationHelper.GetDefaultConnectionString();
 
-                using (var connection = new SqlConnection(_connectionString))
+                using (var connection = new SqlConnection(connectionString))
                 {
                     if (request.QueryParams != null && request.QueryParams.WhereClause != null)
                     {

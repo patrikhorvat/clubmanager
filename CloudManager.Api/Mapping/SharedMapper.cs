@@ -33,32 +33,5 @@ namespace CloudManager.Api.Mapping
             };
         }
 
-        public static ClubModel MapToModel(this Club dto)
-        {
-            if (dto == null)
-                return null;
-
-            return new ClubModel
-            {
-                Id = dto.Id,
-                Name = dto.Name
-                
-            };
-        }
-
-        public static UserModel MapToModel(this User dto)
-        {
-            if (dto == null)
-                return null;
-
-            return new UserModel
-            {
-                Id = dto.Id,
-                FirstName = dto.FirstName,
-                LastName = dto.LastName
-
-            };
-        }
-
     }
 }
