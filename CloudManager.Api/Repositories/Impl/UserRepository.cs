@@ -18,7 +18,17 @@ namespace CloudManager.Api.Repositories.Impl
 
         public async Task<User?> GetByIdentityUserId(string identityUserId)
         {
-            return await _dbContext.Users.SingleOrDefaultAsync(u => u.IdentityUserId == identityUserId && u.Active == true);
+            return await _dbContext.Users
+                .SingleOrDefaultAsync(u => u.IdentityUserId == identityUserId && u.Active == true);
+        }
+
+        public async Task<User?> GetByUserId(int userId)
+        {
+            return await _dbContext.Users
+                .Include(u=>u.IdentityUser)
+                .Include(u=>u.Club)
+                .SingleOrDefaultAsync(u => u.Id == userId 
+                && u.Active == true);
         }
     }
 }
