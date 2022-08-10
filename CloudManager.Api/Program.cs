@@ -7,6 +7,8 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using CloudManager.Api.Entities;
+using CloudManager.Api.Helpers;
+using CloudManager.Api.Helpers.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -82,6 +84,7 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IConfigurationHelper, ConfigurationHelper>();
 
 var app = builder.Build();
 
