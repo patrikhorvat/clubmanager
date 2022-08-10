@@ -1,4 +1,6 @@
-﻿using CloudManager.Api.Repositories;
+﻿using CloudManager.Api.Mapping;
+using CloudManager.Api.Models;
+using CloudManager.Api.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +21,35 @@ namespace CloudManager.Api.Controllers
         {
             _employeeRepository = employeeRepository;
             _logger = logger;
+        }
+
+        [HttpPost("overview")]
+        public async Task<IActionResult> Overview()
+        {
+            var authInfo = new AuthInfo() { };
+
+            var query = new QueryParams(){ };
+
+            if (string.IsNullOrWhiteSpace(query.OrderByClause))
+                query.OrderByClause = "ORDER BY DateCreated DESC";
+
+            var request = new OverviewRequest()
+            {
+                RequestToken = Guid.NewGuid(),
+                AuthInfo = authInfo,
+                QueryParams = query
+            };
+
+            var response = await _employeeRepository.EmployeesOverview(request);
+
+            if (!response.Success)
+                return BadRequest();
+
+            return new ObjectResult(new
+            {
+                Data = response.Data.Select(x => x.MapToModel()),
+                Total = response.Total
+            });
         }
 
         [HttpGet]

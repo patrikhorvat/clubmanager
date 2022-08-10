@@ -1,5 +1,9 @@
 ﻿using CloudManager.Api.Entities;
+using CloudManager.Api.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Dapper;
+using CloudManager.Api.DtoObjects;
 
 namespace CloudManager.Api.Repositories.Impl
 {
@@ -7,13 +11,16 @@ namespace CloudManager.Api.Repositories.Impl
     {
         private readonly ILogger<EmployeeRepository> _logger;
         private readonly ClubManagerContext _dbContext;
+        private readonly string _connectionString;
 
         public EmployeeRepository(
             ClubManagerContext dbContext,
-            ILogger<EmployeeRepository> logger)
+            ILogger<EmployeeRepository> logger,
+            string connectionString)
         {
             _dbContext = dbContext;
             _logger = logger;
+            _connectionString = connectionString;
         }
 
         public async Task<Employee?> FindById(int id)
@@ -24,5 +31,45 @@ namespace CloudManager.Api.Repositories.Impl
                     .ThenInclude(y=>y.Group)
                 .SingleOrDefaultAsync(e=>e.Id == id);
         }
+
+        public async Task<OverviewResponse<EmployeeDto>> EmployeesOverview(OverviewRequest request)
+        {
+            var response = new OverviewResponse<EmployeeDto>()
+            {
+                ResponseToken = Guid.NewGuid(),
+                Request = request
+            };
+            try
+            {
+
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    if (request.QueryParams != null && request.QueryParams.WhereClause != null)
+                    {
+                        response.Data = await connection
+                            .QueryAsync<EmployeeDto>($"SELECT * FROM dbo.vEmployee {request.QueryParams.WhereClause} {request.QueryParams.OrderByClause} OFFSET {request.QueryParams.Skip} ROWS FETCH NEXT {request.QueryParams.Take} ROWS ONLY");
+
+                        response.Total = await connection
+                            .QueryFirstOrDefaultAsync<int>($"SELECT COUNT(*) FROM dbo.vEmployee {request.QueryParams.WhereClause}");
+                    }
+                    else {
+                        response.Data = await connection
+                               .QueryAsync<EmployeeDto>($"SELECT * FROM dbo.vEmployee");
+
+                        response.Total = await connection
+                            .QueryFirstOrDefaultAsync<int>($"SELECT COUNT(*) FROM dbo.vEmployee ");
+                    }
+                }
+
+                response.Success = true;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+            }
+            return response;
+        }
+
     }
 }

@@ -1,16 +1,37 @@
 
 const Home = {
-    text: 'Home',
+    text: 'Dashboard',
     link: '/home',
     icon: 'icon-home'
 };
 
 const headingMain = {
-    text: 'Main Navigation',
+    text: 'Glavni izbornik',
     heading: true
+};
+
+const players = {
+  text: 'Igrači',
+  link: '/home',
+  icon: 'icon-home'
+};
+
+const trainers = {
+  text: 'Treneri',
+  link: '/home',
+  icon: 'icon-home'
+};
+
+const asset = {
+  text: 'Imovina',
+  link: '/home',
+  icon: 'icon-home'
 };
 
 export const menu = [
     headingMain,
-    Home
+  Home,
+  players,
+  trainers,
+    asset
 ];

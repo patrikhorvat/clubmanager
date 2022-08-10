@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-    }
+  }
+
+  goToState = function () { };
 
 }
