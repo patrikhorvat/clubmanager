@@ -73,5 +73,31 @@ namespace CloudManager.Api.Repositories.Impl
             return response;
         }
 
+        public async Task<CountEntityResponse> GetEmployeesCount(CountEntityRequest request)
+        {
+            var response = new CountEntityResponse()
+            {
+                ResponseToken = Guid.NewGuid(),
+                Request = request
+            };
+            try
+            {
+                var c = await _dbContext.Employees
+                          .Where(u => u.Active == true)
+                    .CountAsync();
+
+                response.Count = c;
+                response.Success = true;
+
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+            }
+
+            return response;
+        }
+
     }
 }

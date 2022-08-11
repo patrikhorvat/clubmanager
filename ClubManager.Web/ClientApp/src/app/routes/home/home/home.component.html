@@ -6,19 +6,204 @@
   </div>
 </div>
 
+<fieldset>
+  <legend>Imovina</legend>
+
+  <div class="row">
+
+    <div class="col-xl-3 col-md-6">
+
+      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
+          <em class="fa-3x fas fas fa-box"></em>
+        </div>
+        <div class="col-8 py-3 rounded-right text-right bg-success">
+          <div class="h2 mt-0">
+            <div class="ball-pulse">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <span>{{assetYerseyCount}}</span>
+          </div>
+
+          <div class="text-uppercase truncate-fw text-right" title="Dresovi">Dresovi</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+
+      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
+          <em class="fa-3x fas fas fa-circle"></em>
+        </div>
+        <div class="col-8 py-3 rounded-right text-right bg-success">
+          <div class="h2 mt-0">
+            <div class="ball-pulse">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <span>{{assetBallCount}}</span>
+          </div>
+
+          <div class="text-uppercase truncate-fw text-right" title="Lopte">Lopte</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+
+      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
+          <em class="fa-3x fas fa-socks"></em>
+        </div>
+        <div class="col-8 py-3 rounded-right text-right bg-success">
+          <div class="h2 mt-0">
+            <div class="ball-pulse">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <span>{{assetSocksCount}}</span>
+          </div>
+
+          <div class="text-uppercase truncate-fw text-right" title="Štucne">Štucne</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+
+      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
+          <em class="fa-3x fas fa-tags"></em>
+        </div>
+        <div class="col-8 py-3 rounded-right text-right bg-success">
+          <div class="h2 mt-0">
+            <div class="ball-pulse">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <span>{{assetGoalCount}}</span>
+          </div>
+
+          <div class="text-uppercase truncate-fw text-right" title="Golovi">Golovi</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+
+      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
+          <em class="fa-3x fas fa-bars"></em>
+        </div>
+        <div class="col-8 py-3 rounded-right text-right bg-success">
+          <div class="h2 mt-0">
+            <div class="ball-pulse">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <span>{{assetRestCount}}</span>
+          </div>
+
+          <div class="text-uppercase truncate-fw text-right" title="Ostala oprema">Ostala oprema za trening</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+
+      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
+          <em class="fa-3x fas fa-receipt"></em>
+        </div>
+        <div class="col-8 py-3 rounded-right text-right bg-success">
+          <div class="h2 mt-0">
+            <div class="ball-pulse">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <span>{{assetMachineCount}}</span>
+          </div>
+
+          <div class="text-uppercase truncate-fw text-right" title="Kosilice">Kosilice</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+
+      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-primary-dark">
+          <em class="fa-3x fas fa-pile">Σ</em>
+        </div>
+        <div class="col-8 py-3 rounded-right text-right bg-primary">
+          <div class="h2 mt-0">
+            <div class="ball-pulse">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <span>{{assetCount}}</span>
+          </div>
+
+          <div class="text-uppercase truncate-fw text-right" title="Sva oprema">Ukupan broj sve opreme</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+
+      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-danger-dark">
+          <em class="fa-3x fas fa-flag"></em>
+        </div>
+        <div class="col-8 py-3 rounded-right text-right bg-danger">
+          <div class="h2 mt-0">
+            <div class="ball-pulse">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <span>{{assetBrokenCount}}</span>
+          </div>
+
+          <div class="text-uppercase truncate-fw text-right" title="Slomljena oprema">Slomljena oprema</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</fieldset>
+
 
 <fieldset>
   <legend>Zaposlenici</legend>
 
   <div class="row">
 
-    <div class="col-xl-4 col-md-6">
+    <div class="col-xl-3 col-md-6">
 
       <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-primary-dark">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
           <em class="fa-3x fas fa-users"></em>
         </div>
-        <div class="col-8 py-3 rounded-right text-right bg-primary">
+        <div class="col-8 py-3 rounded-right text-right bg-success">
           <div class="h2 mt-0">
             <div class="ball-pulse">
               <div></div>
@@ -34,13 +219,13 @@
 
     </div>
 
-    <div class="col-xl-4 col-md-6">
+    <div class="col-xl-3 col-md-6">
 
       <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-primary">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
           <em class="fa-3x fas fas fa-users"></em>
         </div>
-        <div class="col-8 py-3 rounded-right text-right bg-primary-dark">
+        <div class="col-8 py-3 rounded-right text-right bg-success">
           <div class="h2 mt-0">
             <div class="ball-pulse">
               <div></div>
@@ -56,7 +241,7 @@
 
     </div>
 
-    <div class="col-xl-4 col-md-6">
+    <div class="col-xl-3 col-md-6">
 
       <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
         <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
@@ -78,13 +263,13 @@
 
     </div>
 
-    <div class="col-xl-4 col-md-6">
+    <div class="col-xl-3 col-md-6">
 
       <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-yellow-dark">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
           <em class="fa-3x fas fa-users"></em>
         </div>
-        <div class="col-8 py-3 rounded-right text-right bg-yellow">
+        <div class="col-8 py-3 rounded-right text-right bg-success">
           <div class="h2 mt-0">
             <div class="ball-pulse">
               <div></div>
@@ -100,13 +285,13 @@
 
     </div>
 
-    <div class="col-xl-4 col-md-6">
+    <div class="col-xl-3 col-md-6">
 
       <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-primary-dark">
-          <em class="fa-3x fas fa-users"></em>
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
+          <em class="fa-3x fas fa-server"></em>
         </div>
-        <div class="col-8 py-3 rounded-right text-right bg-primary">
+        <div class="col-8 py-3 rounded-right text-right bg-success">
           <div class="h2 mt-0">
             <div class="ball-pulse">
               <div></div>
@@ -122,11 +307,33 @@
 
     </div>
 
-    <div class="col-xl-4 col-md-6">
+    <div class="col-xl-3 col-md-6">
+
+      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
+        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
+          <em class="fa-3x fas fa-users"></em>
+        </div>
+        <div class="col-8 py-3 rounded-right text-right bg-success">
+          <div class="h2 mt-0">
+            <div class="ball-pulse">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <span>{{employeesCount}}</span>
+          </div>
+
+          <div class="text-uppercase truncate-fw text-right" title="Uprava kluba">Uprava kluba</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-xl-3 col-md-6">
 
       <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
         <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-primary-dark">
-          <em class="fa-3x fas fa-users"></em>
+          <em class="fa-3x fas fa-ball">Σ</em>
         </div>
         <div class="col-8 py-3 rounded-right text-right bg-primary">
           <div class="h2 mt-0">
@@ -135,7 +342,7 @@
               <div></div>
               <div></div>
             </div>
-            <span>22</span>
+            <span>{{employeesCount}}</span>
           </div>
 
           <div class="text-uppercase truncate-fw text-right" title="Svi zaposlenici">Svi zaposlenici</div>
@@ -144,7 +351,7 @@
 
     </div>
 
-    <div class="col-xl-4 col-md-6">
+    <div class="col-xl-3 col-md-6">
 
       <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
         <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-danger-dark">
@@ -170,167 +377,5 @@
 
 </fieldset>
 
-<fieldset>
-  <legend>Imovina</legend>
-
-  <div class="row">
-
-    <div class="col-xl-4 col-md-6">
-
-      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-primary-dark">
-          <em class="fa-3x fas fa-tachometer-alt"></em>
-        </div>
-        <div class="col-8 py-3 rounded-right text-right bg-primary">
-          <div class="h2 mt-0">
-            <div class="ball-pulse">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <span>22</span>
-          </div>
-
-          <div class="text-uppercase truncate-fw text-right" title="Dresovi">Dresovi</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-xl-4 col-md-6">
-
-      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-primary">
-          <em class="fa-3x fas fas fa-box"></em>
-        </div>
-        <div class="col-8 py-3 rounded-right text-right bg-primary-dark">
-          <div class="h2 mt-0">
-            <div class="ball-pulse">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <span>12</span>
-          </div>
-
-          <div class="text-uppercase truncate-fw text-right" title="Lopte">Lopte</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-xl-4 col-md-6">
-
-      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-success-dark">
-          <em class="fa-3x fas fa-cog"></em>
-        </div>
-        <div class="col-8 py-3 rounded-right text-right bg-success">
-          <div class="h2 mt-0">
-            <div class="ball-pulse">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <span>12</span>
-          </div>
-
-          <div class="text-uppercase truncate-fw text-right" title="Štucne">Štucne</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-xl-4 col-md-6">
-
-      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-yellow-dark">
-          <em class="fa-3x fas fa-tags"></em>
-        </div>
-        <div class="col-8 py-3 rounded-right text-right bg-yellow">
-          <div class="h2 mt-0">
-            <div class="ball-pulse">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <span>22</span>
-          </div>
-
-          <div class="text-uppercase truncate-fw text-right" title="Golovi">Golovi</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-xl-4 col-md-6">
-
-      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-primary-dark">
-          <em class="fa-3x fas fa-bars"></em>
-        </div>
-        <div class="col-8 py-3 rounded-right text-right bg-primary">
-          <div class="h2 mt-0">
-            <div class="ball-pulse">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <span>22</span>
-          </div>
-
-          <div class="text-uppercase truncate-fw text-right" title="Ostala oprema">Ostala oprema za trening</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-xl-4 col-md-6">
-
-      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-primary-dark">
-          <em class="fa-3x fas fa-receipt"></em>
-        </div>
-        <div class="col-8 py-3 rounded-right text-right bg-primary">
-          <div class="h2 mt-0">
-            <div class="ball-pulse">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <span>22</span>
-          </div>
-
-          <div class="text-uppercase truncate-fw text-right" title="Kosilice">Kosilice</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-xl-4 col-md-6">
-
-      <div class="card flex-row align-items-center align-items-stretch border-0 cursor-pointer" (dblclick)="goToState()">
-        <div class="col-4 d-flex align-items-center justify-content-center rounded-left bg-danger-dark">
-          <em class="fa-3x fas fa-flag"></em>
-        </div>
-        <div class="col-8 py-3 rounded-right text-right bg-danger">
-          <div class="h2 mt-0">
-            <div class="ball-pulse">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <span>22</span>
-          </div>
-
-          <div class="text-uppercase truncate-fw text-right" title="Slomljena oprema">Slomljena oprema</div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</fieldset>
 
 

@@ -24,8 +24,8 @@ const trainers = {
 
 const employees = {
   text: 'Zaposlenici',
-  link: '/home',
-  icon: 'icon-home'
+  link: '/employees/overview',
+  icon: 'fas fa-users'
 };
 
 const asset = {

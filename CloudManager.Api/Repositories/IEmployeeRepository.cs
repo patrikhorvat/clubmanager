@@ -8,5 +8,6 @@ namespace CloudManager.Api.Repositories
     {
         Task<Employee?> FindById(int id);
         Task<OverviewResponse<EmployeeDto>> EmployeesOverview(OverviewRequest request);
+        Task<CountEntityResponse> GetEmployeesCount(CountEntityRequest request);
     }
 }

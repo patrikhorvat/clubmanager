@@ -85,6 +85,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IConfigurationHelper, ConfigurationHelper>();
+builder.Services.AddScoped<IAssetRepository, AssetRepository>();
 
 var app = builder.Build();
 
