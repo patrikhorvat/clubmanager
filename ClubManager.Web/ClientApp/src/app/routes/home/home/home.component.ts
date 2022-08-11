@@ -13,6 +13,13 @@ export class HomeComponent implements OnInit {
   isBusy: boolean = false;
 
   employeesCount: number = 0;
+  employeesPlayersCount: number = 0;
+  employeesAdminsCount: number = 0;
+  employeesLeadsCount: number = 0;
+  employeesRestCount: number = 0;
+  employeesCoachesCount: number = 0;
+  employeesMaintenancesCount: number = 0;
+  employeesPlayersInjuryCount: number = 0;
 
   assetCount: number = 0;
   assetBallCount: number = 0;
@@ -32,6 +39,69 @@ export class HomeComponent implements OnInit {
       this.employeesCount = x;
     }, error => {
       this.employeesCount = 0;
+    },
+      () => {
+        this.isBusy = false;
+      });
+
+    this.apiService.get("/dashboard/count-employees-players").subscribe(x => {
+      this.employeesPlayersCount = x;
+    }, error => {
+      this.employeesPlayersCount = 0;
+    },
+      () => {
+        this.isBusy = false;
+      });
+
+    this.apiService.get("/dashboard/count-employees-injury").subscribe(x => {
+      this.employeesPlayersInjuryCount = x;
+    }, error => {
+      this.employeesPlayersInjuryCount = 0;
+    },
+      () => {
+        this.isBusy = false;
+      });
+
+    this.apiService.get("/dashboard/count-employees-admins").subscribe(x => {
+      this.employeesAdminsCount = x;
+    }, error => {
+      this.employeesAdminsCount = 0;
+    },
+      () => {
+        this.isBusy = false;
+      });
+
+    this.apiService.get("/dashboard/count-employees-lead").subscribe(x => {
+      this.employeesLeadsCount = x;
+    }, error => {
+      this.employeesLeadsCount = 0;
+    },
+      () => {
+        this.isBusy = false;
+      });
+
+    this.apiService.get("/dashboard/count-employees-rest").subscribe(x => {
+      this.employeesRestCount = x;
+    }, error => {
+      this.employeesRestCount = 0;
+    },
+      () => {
+        this.isBusy = false;
+      });
+
+    this.apiService.get("/dashboard/count-employees-coaches").subscribe(x => {
+      this.employeesCoachesCount = x;
+    }, error => {
+      this.employeesCoachesCount = 0;
+    },
+      () => {
+        this.isBusy = false;
+      });
+
+    this.apiService.get("/dashboard/count-employees-maintenance").subscribe(x => {
+      this.employeesMaintenancesCount = x;
+    }, error => {
+      this.employeesMaintenancesCount = 0;
     },
       () => {
         this.isBusy = false;

@@ -28,8 +28,10 @@ namespace CloudManager.Api.Controllers
             _assetRepository = assetRepository;
         }
 
+        #region Employee Dashboard
+
         [HttpGet("count-employees")]
-        public async Task<IActionResult> GetPartnersCount()
+        public async Task<IActionResult> GetEmployeesCount()
         {
             var authInfo = new AuthInfo() { };
 
@@ -38,6 +40,87 @@ namespace CloudManager.Api.Controllers
             return new ObjectResult(result.Count);
 
         }
+
+        [HttpGet("count-employees-players")]
+        public async Task<IActionResult> GetPlayersCount()
+        {
+            var authInfo = new AuthInfo() { };
+
+            var result = await _employeeRepository.GetPlayersCount(new CountEntityRequest { });
+
+            return new ObjectResult(result.Count);
+
+        }
+
+        [HttpGet("count-employees-admins")]
+        public async Task<IActionResult> GetAdminsCount()
+        {
+            var authInfo = new AuthInfo() { };
+
+            var result = await _employeeRepository.GetAdminisCount(new CountEntityRequest { });
+
+            return new ObjectResult(result.Count);
+
+        }
+
+        [HttpGet("count-employees-coaches")]
+        public async Task<IActionResult> GetCoachesCount()
+        {
+            var authInfo = new AuthInfo() { };
+
+            var result = await _employeeRepository.GetCoachesCount(new CountEntityRequest { });
+
+            return new ObjectResult(result.Count);
+
+        }
+
+        [HttpGet("count-employees-rest")]
+        public async Task<IActionResult> GetRestCount()
+        {
+            var authInfo = new AuthInfo() { };
+
+            var result = await _employeeRepository.GetRestCount(new CountEntityRequest { });
+
+            return new ObjectResult(result.Count);
+
+        }
+
+        [HttpGet("count-employees-lead")]
+        public async Task<IActionResult> GetLeadCount()
+        {
+            var authInfo = new AuthInfo() { };
+
+            var result = await _employeeRepository.GetLeadCount(new CountEntityRequest { });
+
+            return new ObjectResult(result.Count);
+
+        }
+
+        [HttpGet("count-employees-maintenance")]
+        public async Task<IActionResult> GetMaintenanceCount()
+        {
+            var authInfo = new AuthInfo() { };
+
+            var result = await _employeeRepository.GetMaintenanceCount(new CountEntityRequest { });
+
+            return new ObjectResult(result.Count);
+
+        }
+
+        [HttpGet("count-employees-injury")]
+        public async Task<IActionResult> GetInjuryCount()
+        {
+            var authInfo = new AuthInfo() { };
+
+            var result = await _employeeRepository.GetInjuryCount(new CountEntityRequest { });
+
+            return new ObjectResult(result.Count);
+
+        }
+
+        #endregion
+
+        #region Asset Dashboard
 
         [HttpGet("count-asset")]
         public async Task<IActionResult> GetAssetCount()
@@ -127,6 +210,7 @@ namespace CloudManager.Api.Controllers
             return new ObjectResult(result.Count);
 
         }
+        #endregion
 
     }
 }
