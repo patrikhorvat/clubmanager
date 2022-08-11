@@ -34,7 +34,7 @@ export const routes: Routes = [
                 redirectTo: 'not-found'
           },
           {
-            path: 'employees', loadChildren: () => import('../employees/employees.module').then(m => m.EmployeesModule)
+            path: 'employee', loadChildren: () => import('../employees/employees.module').then(m => m.EmployeesModule)
           },
         ]
     },
