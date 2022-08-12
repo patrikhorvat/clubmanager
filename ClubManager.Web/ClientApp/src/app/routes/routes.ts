@@ -3,9 +3,13 @@ import { AuthGuard } from '../core/services/auth-guard.service';
 import { LayoutComponent } from '../layout/layout.component';
 
 export const routes: Routes = [
-
+    {
+        path: 'auth/:mode',
+        loadChildren: ()=>import('../auth/auth.module').then(m=>m.AuthModule)
+    },
     {
         path: '',
+        component: LayoutComponent,
         children: [
             {   
                 path: '', 
@@ -15,11 +19,10 @@ export const routes: Routes = [
             { 
                 path: 'home', 
                 canActivate: [AuthGuard],
-                component: LayoutComponent,
-                loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+                loadChildren: () => import('./home/home.module').then(m => m.HomeModule) 
+            },
             {
-                path: 'auth/:mode',
-                loadChildren: ()=>import('../auth/auth.module').then(m=>m.AuthModule)
+                path: 'employees', loadChildren: () => import('../employees/employees.module').then(m => m.EmployeesModule)
             },
             {
                 path: 'not-found',
@@ -32,10 +35,7 @@ export const routes: Routes = [
             {
                 path: '**',
                 redirectTo: 'not-found'
-          },
-          {
-            path: 'employee', loadChildren: () => import('../employees/employees.module').then(m => m.EmployeesModule)
-          },
+            }
         ]
     },
 

@@ -12,25 +12,25 @@ const headingMain = {
 
 const players = {
   text: 'Igrači',
-  link: '/home',
+  link: '/players',
   icon: 'icon-home'
 };
 
 const trainers = {
   text: 'Treneri',
-  link: '/home',
+  link: '/trainers',
   icon: 'icon-home'
 };
 
 const employees = {
   text: 'Zaposlenici',
-  link: '/employee/overview',
+  link: '/employees/overview',
   icon: 'fas fa-users'
 };
 
 const asset = {
   text: 'Imovina',
-  link: '/home',
+  link: '/assets',
   icon: 'icon-home'
 };
 
