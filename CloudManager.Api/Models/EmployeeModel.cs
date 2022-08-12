@@ -10,6 +10,7 @@
         public string LastName { get; set; } = null!;
         public int? StatusId { get; set; }
         public string? StatusName { get; set; }
+        public string? StatusColor { get; set; }
         public DateTimeOffset? Birthday { get; set; }
         public DateTimeOffset? DateEmployeed { get; set; }
         public DateTimeOffset? EmployedTo { get; set; }
@@ -19,5 +20,8 @@
         public DateTimeOffset? LastModified { get; set; }
         public int? UserLastModifiedId { get; set; }
         public string? UserLastModifiedDisplayName { get; set; }
+        public int? WorkplaceId { get; set; }
+        public string? WorkplaceName { get; set; }
+        public string? WorkplaceLabel { get; set; }
     }
 }

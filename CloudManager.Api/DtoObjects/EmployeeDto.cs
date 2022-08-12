@@ -20,5 +20,8 @@
         public DateTimeOffset? LastModified { get; set; }
         public int? UserLastModifiedId { get; set; }
         public string? UserLastModifiedDisplayName { get; set; }
+        public int? WorkplaceId { get; set; }
+        public string? WorkplaceName { get; set; }
+        public string? WorkplaceLabel { get; set; }
     }
 }

@@ -5,6 +5,31 @@
   </div>
 </div>
 
-
+<div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td [ngStyle]="{'min-width':'100px'}"><b>Ime</b></td>
+        <td [ngStyle]="{'min-width':'100px'}"><b>Prezime</b></td>
+        <td><b>Radno mjesto</b></td>
+        <td><b>Datum zaposlenja</b></td>
+        <td><b>Oib</b></td>
+        <td><b>Status</b></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.workplaceName}}</td>
+        <td>{{employee.dateEmployeed | date}}</td>
+        <td>{{employee.oib}}</td>
+        <td>
+          <span class="badge" [ngStyle]="{'background-color': employee.statusColor, 'color': '#ffff', 'min-width':'60px'}">{{ employee.statusName }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 

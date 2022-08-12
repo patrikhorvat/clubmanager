@@ -29,7 +29,11 @@ namespace CloudManager.Api.Mapping
                 ClubName = dto.ClubName,
                 StatusName = dto.StatusName,
                 UserCreatedDisplayName = dto.UserCreatedDisplayName,
-                UserLastModifiedDisplayName = dto.UserLastModifiedDisplayName
+                UserLastModifiedDisplayName = dto.UserLastModifiedDisplayName,
+                StatusColor = dto.StatusColor,
+                WorkplaceId = dto.WorkplaceId,
+                WorkplaceLabel = dto.WorkplaceLabel,
+                WorkplaceName = dto.WorkplaceName
             };
         }
 

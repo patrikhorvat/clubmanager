@@ -21,7 +21,8 @@ export function createTranslateLoader(http: HttpClient) {
     declarations: [
         AppComponent
     ],
-    imports: [
+  imports: [
+    BrowserModule,
         HttpClientModule,
         BrowserAnimationsModule, // required for ng2-tag-input
         CoreModule,

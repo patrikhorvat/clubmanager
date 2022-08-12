@@ -13,13 +13,13 @@ const headingMain = {
 const players = {
   text: 'Igrači',
   link: '/players',
-  icon: 'icon-home'
+  icon: 'fas fa-bullseye'
 };
 
 const trainers = {
   text: 'Treneri',
   link: '/trainers',
-  icon: 'icon-home'
+  icon: 'fas fa-hand-holding'
 };
 
 const employees = {
@@ -31,7 +31,7 @@ const employees = {
 const asset = {
   text: 'Imovina',
   link: '/assets',
-  icon: 'icon-home'
+  icon: 'fas fa-box'
 };
 
 export const menu = [
