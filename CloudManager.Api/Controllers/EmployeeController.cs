@@ -57,6 +57,27 @@ namespace CloudManager.Api.Controllers
         }
 
         [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetEmployee(int id)
+        {
+            var authInfo = new AuthInfo() { };
+
+            var request = new GetEntityRequest()
+            {
+                AuthInfo = authInfo,
+                RequestToken = Guid.NewGuid(),
+                EntityId = id
+            };
+
+            var response = await _employeeRepository.GetEmployee(request);
+
+            if (!response.Success)
+                return BadRequest();
+
+            return Ok(new { entity = response.Entity.MapToModel() });
+        }
+
+        [HttpGet]
         public IActionResult Get()
         {
             var connectionString = _configurationHelper.GetDefaultConnectionString();

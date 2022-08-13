@@ -16,5 +16,6 @@ namespace CloudManager.Api.Repositories
         Task<CountEntityResponse> GetRestCount(CountEntityRequest request);
         Task<CountEntityResponse> GetCoachesCount(CountEntityRequest request);
         Task<CountEntityResponse> GetInjuryCount(CountEntityRequest request);
+        Task<GetEntityResponse<EmployeeDto>> GetEmployee(GetEntityRequest request);
     }
 }

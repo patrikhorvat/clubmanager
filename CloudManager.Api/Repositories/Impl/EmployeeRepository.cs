@@ -288,5 +288,71 @@ namespace CloudManager.Api.Repositories.Impl
             return response;
         }
 
+        public async Task<GetEntityResponse<EmployeeDto>> GetEmployee(GetEntityRequest request)
+        {
+            var response = new GetEntityResponse<EmployeeDto>()
+            {
+                Request = request,
+                ResponseToken = Guid.NewGuid(),
+                Success = true
+            };
+
+            try
+            {
+                var e = await _dbContext.Employees
+                  .Include(x => x.UserCreatedNavigation)
+                  .Include(x => x.UserLastModifiedNavigation)
+                  .Include(x => x.StatusNavigation)
+                  .Include(x => x.ClubNavigation)
+                  .SingleAsync(p => p.Id == request.EntityId && p.Active == true);
+
+                var entity = new EmployeeDto()
+                {
+                    Id = e.Id,
+                    Birthday = e.Birthday,
+                    ClubId = e.Club.GetValueOrDefault(),
+                    DateCreated = e.DateCreated,
+                    DateEmployeed = e.DateEmployeed,
+                    EmployedTo = e.EmployedTo,
+                    FirstName = e.FirstName,
+                    LastModified = e.LastModified,
+                    LastName = e.LastName,
+                    Oib = e.Oib,
+                    StatusColor = e.StatusNavigation.Color,
+                    StatusId = e.StatusNavigation.Id,
+                    StatusName = e.StatusNavigation.Name,
+                    UserCreatedId = e.UserCreated,
+                    UserLastModifiedId = e.UserLastModified
+                };
+
+                if (e != null && e.UserCreatedNavigation != null) { 
+                entity.UserCreatedDisplayName = e.UserCreatedNavigation.FirstName;
+                }
+
+                if (e != null && e.UserLastModifiedNavigation != null)
+                {
+                    entity.UserLastModifiedDisplayName = e.UserLastModifiedNavigation.FirstName;
+                }
+
+                if (e != null && e.ClubNavigation != null)
+                {
+                    entity.ClubName = e.ClubNavigation.Name;
+                }
+
+
+                response.Entity = entity;
+                response.Success = true;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+                _logger.LogError(ex, "GetCouponUseCase.ExecuteAsync: Request={@Request}", request);
+            }
+
+            return response;
+        }
+
+
     }
 }

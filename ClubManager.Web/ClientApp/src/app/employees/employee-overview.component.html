@@ -5,7 +5,12 @@
   </div>
 </div>
 
+<button class="btn btn-outline-success btn-sm" type="button" (click)="createEmployee()">
+  <i class="fas fa-plus"></i> Novi zaposlenik
+</button>
+
 <div>
+
   <table class="table table-hover">
     <thead>
       <tr>
@@ -15,6 +20,7 @@
         <td><b>Datum zaposlenja</b></td>
         <td><b>Oib</b></td>
         <td><b>Status</b></td>
+        <td><b></b></td>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +33,7 @@
         <td>
           <span class="badge" [ngStyle]="{'background-color': employee.statusColor, 'color': '#ffff', 'min-width':'60px'}">{{ employee.statusName }}</span>
         </td>
+        <td><button class="btn btn-outline-primary btn-xs" (click)="goToProfile(employee.id)">Profil</button></td>
       </tr>
     </tbody>
   </table>

@@ -1,0 +1,79 @@
+<div class="card card-default">
+  <div class="card-header card-header-blue-colored">Osnovni podaci</div>
+  <div class="card-body">
+    <form class="form-horizontal small-fieldset">
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">ID</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ employee.id }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Status</label>
+          <div class="col-md-10">
+            <span class="badge" [ngStyle]="{'background-color': employee.statusColor, 'color': '#ffff', 'min-width':'60px'}">{{ employee.statusName }}</span>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Ime</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ employee.firstName }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Prezime</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ employee.lastName }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Rođen/a</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ employee.birthday | date }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">OIB</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ employee.oib }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Datum zaposlenja</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ employee.dateEmployeed | date }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Zaposlen/a do</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ employee.employedTo | date }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+    </form>
+  </div>
+</div>

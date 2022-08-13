@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { AlertModule } from "ngx-bootstrap/alert";
 import { ApiService } from "../core/http/api.service";
 
 export interface Employee {
@@ -20,7 +21,7 @@ export class EmployeeOverviewComponent implements OnInit {
   employees: any;
 
   constructor(
-    private router: Router, private apiService: ApiService,) {
+    private router: Router, private apiService: ApiService) {
 
     this.apiService.post("/employee/overview").subscribe(x => {
       this.employees = x.data;
@@ -35,6 +36,14 @@ export class EmployeeOverviewComponent implements OnInit {
   }
 
   refreshGrid() {
+
+  }
+
+  goToProfile(id) {
+    this.router.navigate(['/employees/' + id + '/profile']);
+  }
+
+  createEmployee() {
 
   }
 

@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="content-heading">
+      <div class="truncate-fw mr-1">
+        {{ employee.firstName }}  {{ employee.lastName }}
+        <small>Profil zaposlenika </small>
+      </div>
+      <div class="ml-auto d-inline-flex">
+
+        <button class="btn btn-primary mr-1 d-none d-lg-inline" type="button"
+                (click)="update()">
+          Obriši
+        </button>
+
+        <button class="btn btn-secondary d-none d-lg-inline" type="button" (click)="delete()">
+          Ažuriraj
+        </button>
+
+        <div class="btn-group d-lg-none" dropdown>
+          <button class="btn btn-link" dropdownToggle>
+            <em class="fa fa-ellipsis-v fa-lg"></em>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu dropdown-menu-right-forced animated fadeInLeft" role="menu">
+            <a class="dropdown-item" href="javascript:void(0)" (click)="update()">
+              <span>Ažuriraj}</span>
+            </a>
+            <a class="dropdown-item" href="javascript:void(0)" (click)="delete()">
+              <span>Obriši</span>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-11">
+
+        <app-employee-profile-general [employee]="employee">
+        </app-employee-profile-general>
+
+        <div class="card card-default">
+          <div class="card-header card-header-blue-colored">Detalji</div>
+          <div class="card-body">
+            <form class="form-horizontal small-fieldset">
+              <fieldset>
+                <div class="form-group row">
+                  <label class="col-md-2 col-form-label">Datum kreiranja</label>
+                  <div class="col-md-10">
+                    <p class="form-control-plaintext">{{ employee.dateCreated | date }}</p>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <div class="form-group row">
+                  <label class="col-md-2 col-form-label">Kreirao</label>
+                  <div class="col-md-10">
+                    <p class="form-control-plaintext">
+                     {{employee.userCreatedDisplayName}}
+                    </p>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <div class="form-group row">
+                  <label class="col-md-2 col-form-label">Datum ažuriranja</label>
+                  <div class="col-md-10">
+                    <p class="form-control-plaintext">
+                      {{ employee.lastModified | date }}
+                    </p>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <div class="form-group row">
+                  <label class="col-md-2 col-form-label">Ažurirao</label>
+                  <div class="col-md-10">
+                    <p class="form-control-plaintext">
+                      {{employee.userLastModifiedDisplayName}}
+                    </p>
+                  </div>
+                </div>
+              </fieldset>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

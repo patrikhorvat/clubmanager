@@ -24,7 +24,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\employees\profile\employee-profile.component.ts" />
+    <None Remove="ClientApp\src\app\employees\profile\general\employee-profile-general.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\employees\profile\employee-profile.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\employees\profile\general\employee-profile-general.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
