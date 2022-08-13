@@ -1,0 +1,38 @@
+<div class="content-heading">
+  <div>
+    Imovina
+    <small>Pregled imovine kluba</small>
+  </div>
+</div>
+
+<button class="btn btn-outline-success btn-sm" type="button" (click)="createAsset()">
+  <i class="fas fa-plus"></i> Nova imovina
+</button>
+
+<div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td [ngStyle]="{'min-width':'100px'}"><b>Naziv</b></td>
+        <td [ngStyle]="{'min-width':'100px'}"><b>Stanje</b></td>
+        <td><b>Vrsta imovine</b></td>
+        <td><b>Status</b></td>
+        <td><b></b></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let asset of assets">
+        <td>{{asset.name}}</td>
+        <td>{{asset.condition}}</td>
+        <td>{{asset.assetTypeName}}</td>
+        <td>
+          <span class="badge" [ngStyle]="{'background-color': asset.statusColor, 'color': '#ffff', 'min-width':'60px'}">{{ asset.statusName }}</span>
+        </td>
+        <td><button class="btn btn-outline-primary btn-xs" (click)="goToProfile(asset.id)">Profil</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

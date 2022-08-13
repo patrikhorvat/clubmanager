@@ -1,6 +1,9 @@
-﻿using CloudManager.Api.Entities;
+﻿using CloudManager.Api.DtoObjects;
+using CloudManager.Api.Entities;
 using CloudManager.Api.Helpers;
 using CloudManager.Api.Models;
+using Dapper;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace CloudManager.Api.Repositories.Impl
@@ -242,6 +245,46 @@ namespace CloudManager.Api.Repositories.Impl
             return response;
         }
 
+        public async Task<OverviewResponse<AssetDto>> AssetOverview(OverviewRequest request)
+        {
+            var response = new OverviewResponse<AssetDto>()
+            {
+                ResponseToken = Guid.NewGuid(),
+                Request = request
+            };
+            try
+            {
+                var connectionString = _configurationHelper.GetDefaultConnectionString();
+
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    if (request.QueryParams != null && request.QueryParams.WhereClause != null)
+                    {
+                        response.Data = await connection
+                            .QueryAsync<AssetDto>($"SELECT * FROM dbo.vAsset {request.QueryParams.WhereClause} {request.QueryParams.OrderByClause} ");
+
+                        response.Total = await connection
+                            .QueryFirstOrDefaultAsync<int>($"SELECT COUNT(*) FROM dbo.vAsset {request.QueryParams.WhereClause}");
+                    }
+                    else
+                    {
+                        response.Data = await connection
+                               .QueryAsync<AssetDto>($"SELECT * FROM dbo.vAsset");
+
+                        response.Total = await connection
+                            .QueryFirstOrDefaultAsync<int>($"SELECT COUNT(*) FROM dbo.vAsset ");
+                    }
+                }
+
+                response.Success = true;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+            }
+            return response;
+        }
 
     }
 }

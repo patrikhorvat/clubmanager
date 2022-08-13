@@ -1,6 +1,6 @@
 
 const Home = {
-    text: 'Dashboard',
+    text: 'Kontrolna ploča',
     link: '/home',
     icon: 'icon-home'
 };
@@ -12,31 +12,38 @@ const headingMain = {
 
 const players = {
   text: 'Igrači',
-  link: '/players',
+  link: '/employees/players',
   icon: 'fas fa-bullseye'
 };
 
 const trainers = {
   text: 'Treneri',
-  link: '/trainers',
+  link: '/employees/coaches',
   icon: 'fas fa-hand-holding'
 };
 
 const employees = {
-  text: 'Zaposlenici',
+  text: 'Svi zaposlenici',
   link: '/employees/overview',
   icon: 'fas fa-users'
 };
 
 const asset = {
   text: 'Imovina',
-  link: '/assets',
+  link: '/asset/overview',
   icon: 'fas fa-box'
+};
+
+const teams = {
+  text: 'Timovi',
+  link: '/teams',
+  icon: 'fas fa-building'
 };
 
 export const menu = [
     headingMain,
   Home,
+  teams,
   players,
   trainers,
   employees,

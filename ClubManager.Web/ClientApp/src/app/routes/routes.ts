@@ -23,7 +23,10 @@ export const routes: Routes = [
             },
             {
                 path: 'employees', loadChildren: () => import('../employees/employees.module').then(m => m.EmployeesModule)
-            },
+          },
+          {
+            path: 'asset', loadChildren: () => import('../asset/asset.module').then(m => m.AssetModule)
+          },
             {
                 path: 'not-found',
                 loadChildren: ()=>import('../notfound/notfound.module').then(m=>m.NotFoundModule)

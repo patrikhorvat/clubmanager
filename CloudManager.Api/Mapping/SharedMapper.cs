@@ -37,5 +37,32 @@ namespace CloudManager.Api.Mapping
             };
         }
 
+        public static AssetModel MapToModel(this AssetDto dto)
+        {
+            if (dto == null)
+                return null;
+
+            return new AssetModel
+            {
+                Id = dto.Id,
+                DateCreated = dto.DateCreated,
+                LastModified = dto.LastModified,
+                StatusId = dto.StatusId,
+                UserCreatedId = dto.UserCreatedId,
+                UserLastModifiedId = dto.UserLastModifiedId,
+                StatusName = dto.StatusName,
+                UserCreatedDisplayName = dto.UserCreatedDisplayName,
+                UserLastModifiedDisplayName = dto.UserLastModifiedDisplayName,
+                StatusColor = dto.StatusColor,
+                AssetTypeLabel = dto.AssetTypeLabel,
+                AssetTypeName = dto.AssetTypeName,
+                Club=dto.Club,
+                Condition=dto.Condition,
+                Description=dto.Description,
+                Name=dto.Name,
+                Type = dto.Type
+            };
+        }
+
     }
 }

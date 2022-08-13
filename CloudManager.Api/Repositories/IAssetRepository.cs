@@ -1,4 +1,5 @@
-﻿using CloudManager.Api.Entities;
+﻿using CloudManager.Api.DtoObjects;
+using CloudManager.Api.Entities;
 using CloudManager.Api.Models;
 
 namespace CloudManager.Api.Repositories
@@ -15,5 +16,6 @@ namespace CloudManager.Api.Repositories
         Task<CountEntityResponse> GetAssetRestCount(CountEntityRequest request);
         Task<CountEntityResponse> GetAssetBrokenCount(CountEntityRequest request);
         Task<CountEntityResponse> GetAssetSocksCount(CountEntityRequest request);
+        Task<OverviewResponse<AssetDto>> AssetOverview(OverviewRequest request);
     }
 }

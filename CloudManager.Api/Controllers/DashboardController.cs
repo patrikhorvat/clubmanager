@@ -1,11 +1,13 @@
 ﻿using CloudManager.Api.Helpers;
 using CloudManager.Api.Models;
 using CloudManager.Api.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CloudManager.Api.Controllers
 {
+    [Authorize]
     [Route("api/dashboard")]
     [ApiController]
     public class DashboardController : ControllerBase

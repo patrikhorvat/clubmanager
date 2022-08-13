@@ -49,7 +49,7 @@ namespace CloudManager.Api.Repositories.Impl
                     if (request.QueryParams != null && request.QueryParams.WhereClause != null)
                     {
                         response.Data = await connection
-                            .QueryAsync<EmployeeDto>($"SELECT * FROM dbo.vEmployee {request.QueryParams.WhereClause} {request.QueryParams.OrderByClause} OFFSET {request.QueryParams.Skip} ROWS FETCH NEXT {request.QueryParams.Take} ROWS ONLY");
+                            .QueryAsync<EmployeeDto>($"SELECT * FROM dbo.vEmployee {request.QueryParams.WhereClause} {request.QueryParams.OrderByClause} ");
 
                         response.Total = await connection
                             .QueryFirstOrDefaultAsync<int>($"SELECT COUNT(*) FROM dbo.vEmployee {request.QueryParams.WhereClause}");
