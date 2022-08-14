@@ -57,5 +57,27 @@ namespace CloudManager.Api.Controllers
             });
         }
 
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetAsset(int id)
+        {
+            var authInfo = new AuthInfo() { };
+
+            var request = new GetEntityRequest()
+            {
+                AuthInfo = authInfo,
+                RequestToken = Guid.NewGuid(),
+                EntityId = id
+            };
+
+            var response = await _assetRepository.GetAsset(request);
+
+            if (!response.Success)
+                return BadRequest();
+
+            return Ok(new { entity = response.Entity.MapToModel() });
+        }
+
     }
 }

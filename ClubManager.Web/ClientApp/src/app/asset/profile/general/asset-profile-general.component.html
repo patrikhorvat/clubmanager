@@ -1,0 +1,62 @@
+<div class="card card-default">
+  <div class="card-header card-header-blue-colored">Osnovni podaci</div>
+  <div class="card-body">
+    <form class="form-horizontal small-fieldset">
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">ID</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ asset.id }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Status</label>
+          <div class="col-md-10">
+            <span class="badge" [ngStyle]="{'background-color': asset.statusColor, 'color': '#ffff', 'min-width':'60px'}">{{ asset.statusName }}</span>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Tip imovine</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ asset.assetTypeName }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Naziv</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ asset.name }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Stanje</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ asset.condition }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label">Opis</label>
+          <div class="col-md-10">
+            <p class="form-control-plaintext text-bold">{{ asset.description }}</p>
+          </div>
+        </div>
+      </fieldset>
+
+    </form>
+  </div>
+</div>

@@ -286,5 +286,67 @@ namespace CloudManager.Api.Repositories.Impl
             return response;
         }
 
+        public async Task<GetEntityResponse<AssetDto>> GetAsset(GetEntityRequest request)
+        {
+            var response = new GetEntityResponse<AssetDto>()
+            {
+                Request = request,
+                ResponseToken = Guid.NewGuid(),
+                Success = true
+            };
+
+            try
+            {
+                var e = await _dbContext.Assets
+                  .Include(x => x.UserCreatedNavigation)
+                  .Include(x => x.UserLastModifiedNavigation)
+                  .Include(x => x.StatusNavigation)
+                  .Include(x => x.TypeNavigation)
+                  .SingleAsync(p => p.Id == request.EntityId && p.Active == true);
+
+                var entity = new AssetDto()
+                {
+                    Id = e.Id,
+                    Club = e.Club.GetValueOrDefault(),
+                    DateCreated = e.DateCreated,
+                    LastModified = e.LastModified,
+                    StatusColor = e.StatusNavigation.Color,
+                    StatusId = e.StatusNavigation.Id,
+                    StatusName = e.StatusNavigation.Name,
+                    UserCreatedId = e.UserCreated,
+                    UserLastModifiedId = e.UserLastModified,
+                    Condition = e.Condition,
+                    Description = e.Description,
+                    Name = e.Name,
+                    Type = e.Type
+                };
+
+                if (e != null && e.UserCreatedNavigation != null)
+                {
+                    entity.UserCreatedDisplayName = e.UserCreatedNavigation.FirstName;
+                }
+
+                if (e != null && e.UserLastModifiedNavigation != null)
+                {
+                    entity.UserLastModifiedDisplayName = e.UserLastModifiedNavigation.FirstName;
+                }
+
+                if (e != null && e.TypeNavigation != null)
+                {
+                    entity.AssetTypeName = e.TypeNavigation.Name;
+                }
+
+                response.Entity = entity;
+                response.Success = true;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+            }
+
+            return response;
+        }
+
     }
 }

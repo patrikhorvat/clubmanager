@@ -17,5 +17,6 @@ namespace CloudManager.Api.Repositories
         Task<CountEntityResponse> GetAssetBrokenCount(CountEntityRequest request);
         Task<CountEntityResponse> GetAssetSocksCount(CountEntityRequest request);
         Task<OverviewResponse<AssetDto>> AssetOverview(OverviewRequest request);
+        Task<GetEntityResponse<AssetDto>> GetAsset(GetEntityRequest request);
     }
 }

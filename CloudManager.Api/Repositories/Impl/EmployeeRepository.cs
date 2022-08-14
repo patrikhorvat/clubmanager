@@ -347,7 +347,6 @@ namespace CloudManager.Api.Repositories.Impl
             {
                 response.Success = false;
                 response.Message = ex.GetBaseException().Message;
-                _logger.LogError(ex, "GetCouponUseCase.ExecuteAsync: Request={@Request}", request);
             }
 
             return response;
