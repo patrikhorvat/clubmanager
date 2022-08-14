@@ -1,0 +1,57 @@
+<div class="content-heading">
+  <div>
+    {{ title }}
+  </div>
+
+  <div class="ml-auto">
+    <button class="btn btn-info mr-2" type="submit" [disabled]="isBusy" (click)="onSubmit()">
+      Spremi
+    </button>
+
+    <div class="btn btn-secondary" (click)="onBack()">Odustani</div>
+  </div>
+</div>
+<div class="container-lg">
+  <div class="card card-default">
+    <div class="card-body">
+      <h5 class="card-title">Unesi podatke</h5>
+      <form class="form-horizontal" formGroup="form">
+
+        <div class="form-group row">
+          <label class="col-xl-2 col-form-label bold">Naziv</label>
+          <div class="col-xl-9">
+            <input class="form-control" type="text" formControlName="name" />
+            <!--<div *ngIf="form.get('name')?.errors && (form.get('name')?.dirty || submitted)
+													&& form.get('name')?.errors?.required" class="text-danger">
+              Naziv je obavezan
+            </div>-->
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-xl-2 col-form-label bold">Tip imovine</label>
+          <div class="col-xl-9">
+            <select name="type" id="type">
+              <option *ngFor="let type of assetTypes" value="value">{{type.name}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-xl-2 col-form-label bold">Stanje</label>
+          <div class="col-xl-9">
+            <input class="form-control" type="text" formControlName="condition" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-xl-2 col-form-label">Opis</label>
+          <div class="col-xl-9">
+            <textarea rows="4" class="form-control" formControlName="description"></textarea>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

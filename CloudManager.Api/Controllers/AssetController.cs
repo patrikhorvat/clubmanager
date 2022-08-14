@@ -1,4 +1,5 @@
-﻿using CloudManager.Api.Helpers;
+﻿using CloudManager.Api.DtoObjects;
+using CloudManager.Api.Helpers;
 using CloudManager.Api.Mapping;
 using CloudManager.Api.Models;
 using CloudManager.Api.Repositories;
@@ -16,16 +17,19 @@ namespace CloudManager.Api.Controllers
         private readonly ILogger<EmployeeController> _logger;
         private readonly IConfigurationHelper _configurationHelper;
         private readonly IAssetRepository _assetRepository;
+        private readonly IUserRepository _userRepository;
 
         public AssetController(
             ILogger<EmployeeController> logger,
             IConfigurationHelper configurationHelper,
-            IAssetRepository assetRepository
+            IAssetRepository assetRepository,
+            IUserRepository userRepository
             )
         {
             _configurationHelper = configurationHelper;
             _logger = logger;
             _assetRepository = assetRepository;
+            _userRepository = userRepository;
         }
 
         [HttpPost("overview")]
@@ -77,6 +81,53 @@ namespace CloudManager.Api.Controllers
                 return BadRequest();
 
             return Ok(new { entity = response.Entity.MapToModel() });
+        }
+
+        [HttpPost("create")]
+        public async Task<IActionResult> Create(AssetModel model)
+        {
+            var authInfo = new AuthInfo() { };
+
+            var userId = User.GetUserId();
+
+            var user = await _userRepository.GetByUserId(userId);
+
+            var request = new ManageEntityRequest<AssetDto>()
+            {
+                RequestToken = Guid.NewGuid(),
+                AuthInfo = authInfo,
+                Dto = new AssetDto()
+                {
+                    Description = model.Description,
+                    Name = model.Name,
+                    Type = model.Type,
+                    Condition = model.Condition,
+                    DateCreated = DateTimeOffset.UtcNow,
+                    StatusId = model.StatusId,
+                    UserCreatedId = userId,
+                    Club = user.ClubId
+                }
+            };
+
+            var response = await _assetRepository.CreateAsset(request);
+
+            if (!response.Success)
+                return BadRequest();
+
+            return Ok(response.EntityId);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("types")]
+        public async Task<IActionResult> GetAssetTypes()
+        {
+            var result = await _assetRepository.GetAssetTypes();
+
+            var types = new List<AssetTypeModel>();
+
+            types.AddRange(result.Select(c => c.MapToViewModel()));
+
+            return Ok(types);
         }
 
     }

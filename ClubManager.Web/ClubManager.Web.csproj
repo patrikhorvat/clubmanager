@@ -26,6 +26,8 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\asset\asset-overview.component.ts" />
     <None Remove="ClientApp\src\app\asset\asset.module.ts" />
+    <None Remove="ClientApp\src\app\asset\assetService.ts" />
+    <None Remove="ClientApp\src\app\asset\manage\assetManageResolver.ts" />
     <None Remove="ClientApp\src\app\asset\profile\asset-profile.component.ts" />
     <None Remove="ClientApp\src\app\asset\profile\general\asset-profile-general.component.ts" />
     <None Remove="ClientApp\src\app\employees\coaches\coaches-overview.component.ts" />
@@ -41,6 +43,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\asset\asset-overview.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\asset\asset.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\asset\assetService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\asset\manage\assetManageResolver.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\asset\profile\asset-profile.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\asset\profile\general\asset-profile-general.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\employees\coaches\coaches-overview.component.ts" />

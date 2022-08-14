@@ -7,7 +7,6 @@ namespace CloudManager.Api.Repositories
     public interface IAssetRepository
     {
         Task<Asset?> FindById(int id);
-        //Task<OverviewResponse<EmployeeDto>> EmployeesOverview(OverviewRequest request);
         Task<CountEntityResponse> GetAssetCount(CountEntityRequest request);
         Task<CountEntityResponse> GetAssetBallCount(CountEntityRequest request);
         Task<CountEntityResponse> GetAssetGoalCount(CountEntityRequest request);
@@ -18,5 +17,7 @@ namespace CloudManager.Api.Repositories
         Task<CountEntityResponse> GetAssetSocksCount(CountEntityRequest request);
         Task<OverviewResponse<AssetDto>> AssetOverview(OverviewRequest request);
         Task<GetEntityResponse<AssetDto>> GetAsset(GetEntityRequest request);
+        Task<ManageEntityResponse<ManageEntityRequest<AssetDto>>> CreateAsset(ManageEntityRequest<AssetDto> request);
+        Task<List<AssetTypeDto>> GetAssetTypes();
     }
 }

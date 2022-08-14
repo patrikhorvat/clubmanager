@@ -1,6 +1,7 @@
 ﻿using CloudManager.Api.DtoObjects;
 using CloudManager.Api.Entities;
 using CloudManager.Api.Helpers;
+using CloudManager.Api.Mapping;
 using CloudManager.Api.Models;
 using Dapper;
 using Microsoft.Data.SqlClient;
@@ -346,6 +347,58 @@ namespace CloudManager.Api.Repositories.Impl
             }
 
             return response;
+        }
+
+        public async Task<ManageEntityResponse<ManageEntityRequest<AssetDto>>> CreateAsset(ManageEntityRequest<AssetDto> request)
+        {
+            var response = new ManageEntityResponse<ManageEntityRequest<AssetDto>>()
+            {
+                ResponseToken = Guid.NewGuid(),
+                Request = request,
+                Success = true
+            };
+
+            try
+            {
+                var dto = request.Dto;
+
+                var entity = new Entities.Asset()
+                {
+                    DateCreated = dto.DateCreated,
+                    UserCreated = dto.UserCreatedId.GetValueOrDefault(),
+                    Description = dto.Description,
+                    Name = dto.Name,
+                    Club = dto.Club,
+                    Type = dto.Type.GetValueOrDefault(),
+                    Condition = dto.Condition,
+                    Status = dto.StatusId.GetValueOrDefault()
+                };
+
+                await _dbContext.Assets.AddAsync(entity);
+                await _dbContext.SaveChangesAsync();
+
+                response.EntityId = entity.Id;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+            }
+
+            return response;
+        }
+
+        public async Task<List<AssetTypeDto>> GetAssetTypes()
+        {
+            var result = new List<AssetTypeDto>();
+            var languages = await _dbContext.AssetTypes.ToListAsync();
+
+            if (languages == null)
+                return result;
+
+            result.AddRange(languages.Select(l => l.MapToResult()));
+
+            return result;
         }
 
     }

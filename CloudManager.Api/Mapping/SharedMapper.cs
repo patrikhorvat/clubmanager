@@ -64,5 +64,31 @@ namespace CloudManager.Api.Mapping
             };
         }
 
+        public static AssetTypeModel MapToViewModel(this AssetTypeDto dto)
+        {
+            if (dto == null)
+                return null;
+
+            return new AssetTypeModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Label = dto.Label
+            };
+        }
+
+        public static AssetTypeDto MapToResult(this AssetType dto)
+        {
+            if (dto == null)
+                return null;
+
+            return new AssetTypeDto
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Label = dto.Label
+            };
+        }
+
     }
 }
