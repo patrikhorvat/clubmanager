@@ -11,7 +11,7 @@ import { AssetService } from '../assetService';
 
 export class AssetManageComponent {
 
-  form: FormGroup;
+  assetForm: FormGroup;
   title: string = "";
 
   isBusy: boolean = false;
@@ -42,17 +42,16 @@ export class AssetManageComponent {
       this.assetTypes = res.AssetManageResolver[0];
 
     });
-    this.configureForm();
   };
 
 
   ngOnInit(): void {
-    this.onChanges();
+    this.configureForm();
   }
 
   configureForm() {
     if (!this.isUpdate) {
-      this.form = this.formBuilder.group({
+      this.assetForm = this.formBuilder.group({
         name: [null, [Validators.required]],
         description: [null],
         condition: [null],
@@ -60,7 +59,7 @@ export class AssetManageComponent {
       });
     }
     else {
-      this.form = this.formBuilder.group({
+      this.assetForm = this.formBuilder.group({
         name: [this.asset.name, [Validators.required]],
         description: [this.asset.description],
         condition: [this.asset.condition],
@@ -69,17 +68,13 @@ export class AssetManageComponent {
     }
   }
 
-  onChanges(): void {
-
-  }
-
   onSubmit() {
     this.submitted = true;
     debugger;
-    if (this.form.valid) {
+    if (this.assetForm.valid) {
       this.isBusy = true;
 
-      var model = Object.assign({}, this.form.value);
+      var model = Object.assign({}, this.assetForm.value);
 
       if (this.isUpdate) {
         this.updateAsset(model);

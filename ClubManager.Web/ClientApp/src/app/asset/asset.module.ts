@@ -7,6 +7,7 @@ import { AssetManageComponent } from "./manage/asset-manage.component";
 import { AssetProfileComponent } from "./profile/asset-profile.component";
 import { AssetProfileGeneralComponent } from "./profile/general/asset-profile-general.component";
 import { AssetManageResolver } from "./manage/assetManageResolver";
+import { ReactiveFormsModule } from "@angular/forms";
 
 const routes: Routes = [
   {
@@ -41,6 +42,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   exports: [
