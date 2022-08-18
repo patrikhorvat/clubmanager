@@ -31,8 +31,8 @@
         <div class="form-group row">
           <label class="col-xl-2 col-form-label bold">Tip imovine</label>
           <div class="col-xl-9">
-            <select name="type" id="type">
-              <option *ngFor="let type of assetTypes" value="value">{{type.name}}</option>
+            <select formControlName="type" (change)="changeType($event)">
+              <option *ngFor="let type of assetTypes"[ngValue]="type.id">{{type.name}}</option>
             </select>
           </div>
         </div>

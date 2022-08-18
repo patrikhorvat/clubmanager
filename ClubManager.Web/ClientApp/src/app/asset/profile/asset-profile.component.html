@@ -12,7 +12,8 @@
           Obriši
         </button>
 
-        <button class="btn btn-secondary d-none d-lg-inline" type="button" (click)="delete()">
+        <button class="btn btn-secondary d-none d-lg-inline" type="button"
+                [routerLink]="['/asset/' + asset.id + '/update/']">
           Ažuriraj
         </button>
 

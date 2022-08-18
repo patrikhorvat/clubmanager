@@ -90,5 +90,22 @@ namespace CloudManager.Api.Mapping
             };
         }
 
+        public static TeamModel MapToModel(this TeamDto dto)
+        {
+            if (dto == null)
+                return null;
+
+            return new TeamModel
+            {
+                Id = dto.Id,
+                StatusId = dto.StatusId,
+                StatusName = dto.StatusName,
+                StatusColor = dto.StatusColor,
+                Club = dto.Club,
+                Name = dto.Name,
+                League = dto.League
+            };
+        }
+
     }
 }

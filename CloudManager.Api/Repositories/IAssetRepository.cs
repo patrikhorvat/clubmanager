@@ -19,5 +19,6 @@ namespace CloudManager.Api.Repositories
         Task<GetEntityResponse<AssetDto>> GetAsset(GetEntityRequest request);
         Task<ManageEntityResponse<ManageEntityRequest<AssetDto>>> CreateAsset(ManageEntityRequest<AssetDto> request);
         Task<List<AssetTypeDto>> GetAssetTypes();
+        Task<ManageEntityResponse<ManageEntityRequest<AssetDto>>> UpdateAsset(ManageEntityRequest<AssetDto> request);
     }
 }

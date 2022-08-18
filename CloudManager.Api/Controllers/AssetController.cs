@@ -84,7 +84,7 @@ namespace CloudManager.Api.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> Create(AssetModel model)
+        public async Task<IActionResult> Create(AssetManageModel model)
         {
             var authInfo = new AuthInfo() { };
 
@@ -103,13 +103,46 @@ namespace CloudManager.Api.Controllers
                     Type = model.Type,
                     Condition = model.Condition,
                     DateCreated = DateTimeOffset.UtcNow,
-                    StatusId = model.StatusId,
+                    StatusId = 4,
                     UserCreatedId = userId,
                     Club = user.ClubId
                 }
             };
 
             var response = await _assetRepository.CreateAsset(request);
+
+            if (!response.Success)
+                return BadRequest();
+
+            return Ok(response.EntityId);
+        }
+
+        [HttpPut("update")]
+        public async Task<IActionResult> Update(AssetManageModel model)
+        {
+            var authInfo = new AuthInfo() { };
+
+            var userId = User.GetUserId();
+
+            var user = await _userRepository.GetByUserId(userId);
+
+            var request = new ManageEntityRequest<AssetDto>()
+            {
+                RequestToken = Guid.NewGuid(),
+                AuthInfo = authInfo,
+                Dto = new AssetDto()
+                {
+                    Id = model.Id,
+                    Description = model.Description,
+                    Name = model.Name,
+                    Type = model.Type,
+                    Condition = model.Condition,
+                    LastModified = DateTimeOffset.UtcNow,
+                    UserLastModifiedId = userId
+                }
+            };
+
+            var response = await _assetRepository.UpdateAsset(request);
 
             if (!response.Success)
                 return BadRequest();
@@ -129,6 +162,8 @@ namespace CloudManager.Api.Controllers
 
             return Ok(types);
         }
+
+
 
     }
 }

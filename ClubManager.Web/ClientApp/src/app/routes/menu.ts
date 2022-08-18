@@ -36,7 +36,7 @@ const asset = {
 
 const teams = {
   text: 'Timovi',
-  link: '/teams',
+  link: '/team/overview',
   icon: 'fas fa-building'
 };
 

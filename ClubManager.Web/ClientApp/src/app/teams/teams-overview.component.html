@@ -1,0 +1,32 @@
+<div class="content-heading">
+  <div>
+    Timovi
+    <small>Pregled svih timova</small>
+  </div>
+</div>
+
+<div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td [ngStyle]="{'min-width':'100px'}"><b>Naziv</b></td>
+        <td [ngStyle]="{'min-width':'100px'}"><b>Liga</b></td>
+        <td><b>Status</b></td>
+        <td><b></b></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let team of teams">
+        <td>{{team.name}}</td>
+        <td>{{team.league}}</td>
+        <td>
+          <span class="badge" [ngStyle]="{'background-color': team.statusColor, 'color': '#ffff', 'min-width':'60px'}">{{ team.statusName }}</span>
+        </td>
+        <td><button class="btn btn-outline-primary btn-xs" (click)="goToProfile(team.id)">Profil</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

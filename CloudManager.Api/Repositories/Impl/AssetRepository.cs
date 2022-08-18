@@ -270,7 +270,7 @@ namespace CloudManager.Api.Repositories.Impl
                     else
                     {
                         response.Data = await connection
-                               .QueryAsync<AssetDto>($"SELECT * FROM dbo.vAsset");
+                               .QueryAsync<AssetDto>($"SELECT * FROM dbo.vAsset ORDER BY Id DESC");
 
                         response.Total = await connection
                             .QueryFirstOrDefaultAsync<int>($"SELECT COUNT(*) FROM dbo.vAsset ");
@@ -371,10 +371,47 @@ namespace CloudManager.Api.Repositories.Impl
                     Club = dto.Club,
                     Type = dto.Type.GetValueOrDefault(),
                     Condition = dto.Condition,
-                    Status = dto.StatusId.GetValueOrDefault()
+                    Status = dto.StatusId.GetValueOrDefault(),
+                    Active = true
                 };
 
                 await _dbContext.Assets.AddAsync(entity);
+                await _dbContext.SaveChangesAsync();
+
+                response.EntityId = entity.Id;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+            }
+
+            return response;
+        }
+
+        public async Task<ManageEntityResponse<ManageEntityRequest<AssetDto>>> UpdateAsset(ManageEntityRequest<AssetDto> request)
+        {
+            var response = new ManageEntityResponse<ManageEntityRequest<AssetDto>>()
+            {
+                ResponseToken = Guid.NewGuid(),
+                Request = request,
+                Success = true
+            };
+
+            try
+            {
+                var dto = request.Dto;
+
+                var entity = await _dbContext.Assets.SingleAsync(x => x.Id == dto.Id);
+
+                entity.UserLastModified = dto.UserLastModifiedId;
+                entity.Description = dto.Description;
+                entity.Name = dto.Name;
+                entity.Condition = dto.Condition;
+                entity.Type = dto.Type.GetValueOrDefault();
+                entity.LastModified = dto.LastModified;
+
+                _dbContext.Assets.Update(entity);
                 await _dbContext.SaveChangesAsync();
 
                 response.EntityId = entity.Id;

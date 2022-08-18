@@ -33,6 +33,7 @@ export class AssetManageComponent {
       if (res.AssetManageResolver[1]) {
         this.title = "Ažuriranje imovine";
         this.isUpdate = true;
+        this.assetTypes = res.AssetManageResolver[0];
         this.asset = res.AssetManageResolver[1].entity;
       }
       else {
@@ -43,7 +44,6 @@ export class AssetManageComponent {
 
     });
   };
-
 
   ngOnInit(): void {
     this.configureForm();
@@ -68,15 +68,21 @@ export class AssetManageComponent {
     }
   }
 
+  changeType(e) {
+
+  }
+
   onSubmit() {
     this.submitted = true;
-    debugger;
+
     if (this.assetForm.valid) {
       this.isBusy = true;
 
       var model = Object.assign({}, this.assetForm.value);
+      model.statusId = 4;
 
       if (this.isUpdate) {
+        model.id = this.asset.id;
         this.updateAsset(model);
       }
       else {
@@ -119,7 +125,7 @@ export class AssetManageComponent {
           //this.alertService.alertSaveSuccess();
           this.isBusy = false;
 
-          this.router.navigate(['admin', 'assets', this.asset.id, 'profile'])
+          this.router.navigate(['asset', this.asset.id, 'profile'])
         },
         () => {
           //this.alertService.alertSaveError();

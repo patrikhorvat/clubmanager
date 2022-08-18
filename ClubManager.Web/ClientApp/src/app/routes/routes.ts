@@ -27,6 +27,9 @@ export const routes: Routes = [
           {
             path: 'asset', loadChildren: () => import('../asset/asset.module').then(m => m.AssetModule)
           },
+          {
+            path: 'team', loadChildren: () => import('../teams/teams.module').then(m => m.TeamsModule)
+          },
             {
                 path: 'not-found',
                 loadChildren: ()=>import('../notfound/notfound.module').then(m=>m.NotFoundModule)
