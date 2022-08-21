@@ -33,7 +33,10 @@ namespace CloudManager.Api.Mapping
                 StatusColor = dto.StatusColor,
                 WorkplaceId = dto.WorkplaceId,
                 WorkplaceLabel = dto.WorkplaceLabel,
-                WorkplaceName = dto.WorkplaceName
+                WorkplaceName = dto.WorkplaceName,
+                TeamDateFrom = dto.TeamDateFrom,
+                TeamId = dto.TeamId,
+                TeamName = dto.TeamName
             };
         }
 

@@ -15,6 +15,7 @@
         <td><b>Radno mjesto</b></td>
         <td><b>Datum zaposlenja</b></td>
         <td><b>Oib</b></td>
+        <td><b>Tim</b></td>
         <td><b>Status</b></td>
         <td><b></b></td>
       </tr>
@@ -26,6 +27,7 @@
         <td>{{employee.workplaceName}}</td>
         <td>{{employee.dateEmployeed | date}}</td>
         <td>{{employee.oib}}</td>
+        <td>{{employee.teamName}}</td>
         <td>
           <span class="badge" [ngStyle]="{'background-color': employee.statusColor, 'color': '#ffff', 'min-width':'60px'}">{{ employee.statusName }}</span>
         </td>

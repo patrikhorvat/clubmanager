@@ -76,5 +76,30 @@ namespace CloudManager.Api.Controllers
             return Ok(new { entity = response.Entity.MapToModel() });
         }
 
+        [HttpDelete]
+        [Route("team/member/{id}")]
+        public async Task<IActionResult> DeleteTeamMember(int id)
+        {
+            var authInfo = new AuthInfo();
+
+            var userId = User.GetUserId();
+
+            authInfo.UserId = userId;
+
+            var request = new DeleteEntityRequest()
+            {
+                AuthInfo = authInfo,
+                RequestToken = Guid.NewGuid(),
+                EntityId = id
+            };
+
+            var response = await _repository.RemoveTeamMember(request);
+
+            if (!response.Success)
+                return BadRequest();
+
+            return Ok();
+        }
+
     }
 }

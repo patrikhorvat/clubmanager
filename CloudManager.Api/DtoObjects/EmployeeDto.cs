@@ -23,5 +23,8 @@
         public int? WorkplaceId { get; set; }
         public string? WorkplaceName { get; set; }
         public string? WorkplaceLabel { get; set; }
+        public int? TeamId { get; set; }
+        public string? TeamName { get; set; }
+        public DateTimeOffset? TeamDateFrom { get; set; }
     }
 }

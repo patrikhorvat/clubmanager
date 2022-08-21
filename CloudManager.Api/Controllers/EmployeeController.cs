@@ -87,6 +87,42 @@ namespace CloudManager.Api.Controllers
             });
         }
 
+        [HttpPost("overview/members/{teamId}")]
+        public async Task<IActionResult> OverviewMembers(int teamId)
+        {
+            var authInfo = new AuthInfo() { };
+
+            var query = new QueryParams() { };
+
+            if (string.IsNullOrWhiteSpace(query.OrderByClause))
+                query.OrderByClause = "ORDER BY DateCreated DESC";
+
+            query.WhereClause = $@" WHERE Id IN ( SELECT Employee FROM dbo.EmployeeWorkplace 
+                                                WHERE (Workplace = 3 OR Workplace = 2) 
+                                                AND Active = 1 AND IsCurrent = 1 ) 
+                                                AND Id IN ( SELECT Employee FROM dbo.EmployeeTeam 
+                                                WHERE Team = {teamId} 
+                                                AND Active = 1 AND IsCurrent = 1 ) ";
+
+            var request = new OverviewRequest()
+            {
+                RequestToken = Guid.NewGuid(),
+                AuthInfo = authInfo,
+                QueryParams = query
+            };
+
+            var response = await _employeeRepository.EmployeesOverview(request);
+
+            if (!response.Success)
+                return BadRequest();
+
+            return new ObjectResult(new
+            {
+                Data = response.Data.Select(x => x.MapToModel()),
+                Total = response.Total
+            });
+        }
+
         [HttpPost("overview/coaches")]
         public async Task<IActionResult> OverviewCoaches()
         {

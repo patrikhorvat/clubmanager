@@ -30,11 +30,16 @@
     <None Remove="ClientApp\src\app\asset\manage\assetManageResolver.ts" />
     <None Remove="ClientApp\src\app\asset\profile\asset-profile.component.ts" />
     <None Remove="ClientApp\src\app\asset\profile\general\asset-profile-general.component.ts" />
+    <None Remove="ClientApp\src\app\core\services\alert.service.ts" />
     <None Remove="ClientApp\src\app\employees\coaches\coaches-overview.component.ts" />
     <None Remove="ClientApp\src\app\employees\players\players-overview.component.ts" />
     <None Remove="ClientApp\src\app\employees\profile\employee-profile.component.ts" />
     <None Remove="ClientApp\src\app\employees\profile\general\employee-profile-general.component.ts" />
+    <None Remove="ClientApp\src\app\teams\profile\general\team-profile-general.component.ts" />
+    <None Remove="ClientApp\src\app\teams\profile\members\team-profile-members.component.ts" />
+    <None Remove="ClientApp\src\app\teams\profile\team-profile.component.ts" />
     <None Remove="ClientApp\src\app\teams\teams-overview.component.ts" />
+    <None Remove="ClientApp\src\app\teams\teamService.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,11 +53,16 @@
     <TypeScriptCompile Include="ClientApp\src\app\asset\manage\assetManageResolver.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\asset\profile\asset-profile.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\asset\profile\general\asset-profile-general.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\services\alert.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\employees\coaches\coaches-overview.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\employees\players\players-overview.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\employees\profile\employee-profile.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\employees\profile\general\employee-profile-general.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\teams\profile\general\team-profile-general.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\teams\profile\members\team-profile-members.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\teams\profile\team-profile.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\teams\teams-overview.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\teams\teamService.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

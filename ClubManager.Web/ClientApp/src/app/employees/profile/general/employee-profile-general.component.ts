@@ -12,4 +12,7 @@ export class EmployeeProfileGeneralComponent {
   constructor(private activatedRoute: ActivatedRoute) {
 
   }
+
+  addTeam() { };
+
 }

@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="content-heading">
+      <div class="truncate-fw mr-1">
+        {{ team.name }}
+        <small>Profil tima </small>
+      </div>
+      <div class="ml-auto d-inline-flex">
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-11">
+
+        <app-team-profile-general [team]="team">
+        </app-team-profile-general>
+
+        <app-team-profile-members [team]="team">
+        </app-team-profile-members>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

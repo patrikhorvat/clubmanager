@@ -18,6 +18,7 @@ import { HttpCacheService } from './http/http-cache.service';
 import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
 import { CacheInterceptor } from './http/cache.interceptor';
 import { AuthGuard } from './services/auth-guard.service';
+import { AlertService } from './services/alert.service';
 
 export function jwtTokenGetter() {
 	return localStorage.getItem('jwtToken');
@@ -32,7 +33,8 @@ export function jwtTokenGetter() {
 			}
 		})
     ],
-    providers: [
+  providers: [
+    AlertService,
         SettingsService,
         ThemesService,
         TranslatorService,
