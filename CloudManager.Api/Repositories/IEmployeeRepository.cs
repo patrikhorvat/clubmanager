@@ -17,5 +17,8 @@ namespace CloudManager.Api.Repositories
         Task<CountEntityResponse> GetCoachesCount(CountEntityRequest request);
         Task<CountEntityResponse> GetInjuryCount(CountEntityRequest request);
         Task<GetEntityResponse<EmployeeDto>> GetEmployee(GetEntityRequest request);
+        Task<List<EmployeeTypeDto>> GetEmployeeTypes();
+        Task<ManageEntityResponse<ManageEntityRequest<EmployeeDto>>> CreateEmployee(ManageEntityRequest<EmployeeDto> request);
+        Task<ManageEntityResponse<ManageEntityRequest<EmployeeDto>>> UpdateEmployee(ManageEntityRequest<EmployeeDto> request);
     }
 }

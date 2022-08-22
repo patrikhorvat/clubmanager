@@ -10,6 +10,6 @@ export class TeamProfileGeneralComponent {
   @Input('team') team: any;
 
   constructor(private activatedRoute: ActivatedRoute) {
-
+   
   }
 }

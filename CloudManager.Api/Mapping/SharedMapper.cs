@@ -110,5 +110,31 @@ namespace CloudManager.Api.Mapping
             };
         }
 
+        public static EmployeeTypeModel MapToViewModel(this EmployeeTypeDto dto)
+        {
+            if (dto == null)
+                return null;
+
+            return new EmployeeTypeModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Label = dto.Label
+            };
+        }
+
+        public static EmployeeTypeDto MapToResult(this Workplace dto)
+        {
+            if (dto == null)
+                return null;
+
+            return new EmployeeTypeDto
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Label = dto.Label
+            };
+        }
+
     }
 }

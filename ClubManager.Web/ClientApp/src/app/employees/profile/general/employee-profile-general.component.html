@@ -40,16 +40,6 @@
 
       <fieldset>
         <div class="form-group row">
-          <label class="col-md-2 col-form-label">Trenutni tim</label>
-          <div class="col-md-10">
-            <p *ngIf="employee?.teamId > 0" class="form-control-plaintext text-bold">{{ employee.teamName }}</p>
-            <button *ngIf="employee?.teamId == null" class="btn btn-outline-success btn-sm" (click)="addTeam()">+ Dodaj u tim</button>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <div class="form-group row">
           <label class="col-md-2 col-form-label">Rođen/a</label>
           <div class="col-md-10">
             <p class="form-control-plaintext text-bold">{{ employee.birthday | date }}</p>

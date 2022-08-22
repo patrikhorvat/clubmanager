@@ -32,9 +32,13 @@
     <None Remove="ClientApp\src\app\asset\profile\general\asset-profile-general.component.ts" />
     <None Remove="ClientApp\src\app\core\services\alert.service.ts" />
     <None Remove="ClientApp\src\app\employees\coaches\coaches-overview.component.ts" />
+    <None Remove="ClientApp\src\app\employees\employeeService.ts" />
+    <None Remove="ClientApp\src\app\employees\manage\employee-manage.component.ts" />
+    <None Remove="ClientApp\src\app\employees\manage\employeeManageResolver.ts" />
     <None Remove="ClientApp\src\app\employees\players\players-overview.component.ts" />
     <None Remove="ClientApp\src\app\employees\profile\employee-profile.component.ts" />
     <None Remove="ClientApp\src\app\employees\profile\general\employee-profile-general.component.ts" />
+    <None Remove="ClientApp\src\app\employees\unsorted\unsorted-overview.component.ts" />
     <None Remove="ClientApp\src\app\teams\profile\general\team-profile-general.component.ts" />
     <None Remove="ClientApp\src\app\teams\profile\members\team-profile-members.component.ts" />
     <None Remove="ClientApp\src\app\teams\profile\team-profile.component.ts" />
@@ -55,9 +59,13 @@
     <TypeScriptCompile Include="ClientApp\src\app\asset\profile\general\asset-profile-general.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\services\alert.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\employees\coaches\coaches-overview.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\employees\employeeService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\employees\manage\employee-manage.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\employees\manage\employeeManageResolver.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\employees\players\players-overview.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\employees\profile\employee-profile.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\employees\profile\general\employee-profile-general.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\employees\unsorted\unsorted-overview.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\teams\profile\general\team-profile-general.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\teams\profile\members\team-profile-members.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\teams\profile\team-profile.component.ts" />

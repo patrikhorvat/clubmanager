@@ -42,6 +42,10 @@ export class TeamMembersOverviewComponent implements OnInit {
     this.router.navigate(['/employees/' + id + '/profile']);
   }
 
+  addMember() {
+    this.router.navigate(['/employees/' + this.activatedRoute.snapshot.params['id'] + '/unsorted']);
+  };
+
   removeMember(id) {
     this.alertService.confirmDelete(this.service.remove(id)).subscribe(
       () => {

@@ -1,13 +1,9 @@
 <div class="content-heading">
   <div>
-    Zaposlenici
-    <small>Pregled svih zaposlenika</small>
+    Povezivanje igrača/trenera sa timom
+    <small>Pregled nerazvrstanih igrača i trenera</small>
   </div>
 </div>
-
-<button class="btn btn-outline-success btn-sm mr-1" type="button" [routerLink]="['/employees/create']">
-  <i class="fas fa-plus"></i> Novi zaposlenik/ca
-</button>
 
 <div>
 
@@ -33,7 +29,7 @@
         <td>
           <span class="badge" [ngStyle]="{'background-color': employee.statusColor, 'color': '#ffff', 'min-width':'60px'}">{{ employee.statusName }}</span>
         </td>
-        <td><button class="btn btn-outline-primary btn-xs" (click)="goToProfile(employee.id)">Profil</button></td>
+        <td><button class="btn btn-outline-primary btn-xs" (click)="linkToTeam(employee.id)">Poveži tim</button></td>
       </tr>
     </tbody>
   </table>

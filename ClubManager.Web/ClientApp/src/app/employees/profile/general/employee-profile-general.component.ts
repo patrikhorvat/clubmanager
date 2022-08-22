@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-employee-profile-general',
@@ -9,10 +9,8 @@ export class EmployeeProfileGeneralComponent {
 
   @Input('employee') employee: any;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
 
   }
-
-  addTeam() { };
 
 }

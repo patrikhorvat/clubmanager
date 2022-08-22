@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Dapper;
 using CloudManager.Api.DtoObjects;
 using CloudManager.Api.Helpers;
+using CloudManager.Api.Mapping;
 
 namespace CloudManager.Api.Repositories.Impl
 {
@@ -342,6 +343,107 @@ namespace CloudManager.Api.Repositories.Impl
 
                 response.Entity = entity;
                 response.Success = true;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+            }
+
+            return response;
+        }
+
+        public async Task<List<EmployeeTypeDto>> GetEmployeeTypes()
+        {
+            var result = new List<EmployeeTypeDto>();
+            var workplaces = await _dbContext.Workplaces.ToListAsync();
+
+            if (workplaces == null)
+                return result;
+
+            result.AddRange(workplaces.Select(l => l.MapToResult()));
+
+            return result;
+        }
+
+        public async Task<ManageEntityResponse<ManageEntityRequest<EmployeeDto>>> CreateEmployee(ManageEntityRequest<EmployeeDto> request)
+        {
+            var response = new ManageEntityResponse<ManageEntityRequest<EmployeeDto>>()
+            {
+                ResponseToken = Guid.NewGuid(),
+                Request = request,
+                Success = true
+            };
+
+            try
+            {
+                var dto = request.Dto;
+
+                var entity = new Entities.Employee()
+                {
+                    DateCreated = dto.DateCreated,
+                    UserCreated = dto.UserCreatedId.GetValueOrDefault(),
+                    FirstName = dto.FirstName,
+                    LastName = dto.LastName,
+                    Club = dto.ClubId,
+                    Status = dto.StatusId.GetValueOrDefault(),
+                    Active = true
+                };
+
+                await _dbContext.Employees.AddAsync(entity);
+                await _dbContext.SaveChangesAsync();
+
+                if (dto.WorkplaceId == null) {
+                    dto.WorkplaceId = 6;
+                }
+
+                var workplaceEntity = new Entities.EmployeeWorkplace()
+                {
+                    DateFrom = DateTimeOffset.UtcNow,
+                    Active = true,
+                    Employee = entity.Id,
+                    IsCurrent = true,
+                    Workplace = dto.WorkplaceId.GetValueOrDefault()
+                };
+
+                await _dbContext.EmployeeWorkplaces.AddAsync(workplaceEntity);
+                await _dbContext.SaveChangesAsync();
+
+                response.EntityId = entity.Id;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+            }
+
+            return response;
+        }
+
+        public async Task<ManageEntityResponse<ManageEntityRequest<EmployeeDto>>> UpdateEmployee(ManageEntityRequest<EmployeeDto> request)
+        {
+            var response = new ManageEntityResponse<ManageEntityRequest<EmployeeDto>>()
+            {
+                ResponseToken = Guid.NewGuid(),
+                Request = request,
+                Success = true
+            };
+
+            try
+            {
+                var dto = request.Dto;
+
+                var entity = await _dbContext.Employees.SingleAsync(x => x.Id == dto.Id);
+
+                entity.UserLastModified = dto.UserLastModifiedId;
+                entity.FirstName = dto.FirstName;
+                entity.LastName = dto.LastName;
+                entity.LastModified = dto.LastModified;
+
+                _dbContext.Employees.Update(entity);
+                await _dbContext.SaveChangesAsync();
+
+                response.EntityId = entity.Id;
             }
             catch (Exception ex)
             {

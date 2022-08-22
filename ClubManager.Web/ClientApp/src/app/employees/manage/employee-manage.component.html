@@ -1,0 +1,48 @@
+<div class="content-heading">
+  <div>
+    {{ title }}
+  </div>
+
+  <div class="ml-auto">
+    <button class="btn btn-info mr-2" type="submit" [disabled]="isBusy" (click)="onSubmit()">
+      Spremi
+    </button>
+
+    <div class="btn btn-secondary" (click)="onBack()">Odustani</div>
+  </div>
+</div>
+<div class="container-lg">
+  <div class="card card-default">
+    <div class="card-body">
+      <h5 class="card-title">Unesi podatke</h5>
+      <form class="form-horizontal" [formGroup]="employeeForm">
+
+        <div class="form-group row">
+          <label class="col-xl-2 col-form-label bold">Ime</label>
+          <div class="col-xl-9">
+            <input class="form-control" type="text" formControlName="firstName" />
+
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-xl-2 col-form-label bold">Prezime</label>
+          <div class="col-xl-9">
+            <input class="form-control" type="text" formControlName="lastName" />
+
+          </div>
+        </div>
+
+        <div class="form-group row" [hidden]="isUpdate">
+          <label class="col-xl-2 col-form-label bold">Tip zaposlenja</label>
+          <div class="col-xl-9">
+            <select formControlName="type" (change)="changeType($event)">
+              <option *ngFor="let type of employeeTypes" [ngValue]="type.id">{{type.name}}</option>
+            </select>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
