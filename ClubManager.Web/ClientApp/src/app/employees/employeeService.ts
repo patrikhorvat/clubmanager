@@ -24,5 +24,9 @@ export class EmployeeService {
     return this.apiService.get("/employee/types");
   }
 
+  deleteEmployee(id: number) {
+    return this.apiService.delete("/employee/" + id);
+  }
+
 }
 

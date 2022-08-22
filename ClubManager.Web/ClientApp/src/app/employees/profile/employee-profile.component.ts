@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { Router, ActivatedRoute, ActivatedRouteSnapshot } from "@angular/router";
 import { ApiService } from "../../core/http/api.service";
+import { AlertService } from "../../core/services/alert.service";
+import { EmployeeService } from "../employeeService";
 
 @Component({
   selector: 'app-employee-profile',
@@ -13,7 +15,9 @@ export class EmployeeProfileComponent {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private apiService: ApiService) {
+    private apiService: ApiService,
+    private service: EmployeeService,
+    private alertService: AlertService  ) {
 
     this.apiService.get("/employee/" + this.activatedRoute.snapshot.params['id']).subscribe(x => {
       this.employee = x.entity;
@@ -26,8 +30,11 @@ export class EmployeeProfileComponent {
 
   }
 
-  delete() {
-
+  deleteEmployee() {
+    this.alertService.confirmDelete(this.service.deleteEmployee(this.activatedRoute.snapshot.params['id'])).subscribe(
+      () => {
+        this.router.navigate(['/employees/overview']);
+      });
   }
 
   update() {

@@ -24,5 +24,9 @@ export class AssetService {
     return this.apiService.get("/asset/types");
   }
 
+  deleteAsset(id: number) {
+    return this.apiService.delete("/asset/" + id);
+  }
+
 }
 
