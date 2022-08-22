@@ -8,5 +8,6 @@ namespace CloudManager.Api.Repositories
         Task<OverviewResponse<TeamDto>> TeamsOverview(OverviewRequest request);
         Task<GetEntityResponse<TeamDto>> GetTeam(GetEntityRequest request);
         Task<DeleteEntityResponse> RemoveTeamMember(DeleteEntityRequest request);
+        Task<AddTeamMemberResponse> AddTeamMember(AddTeamMemberRequest request);
     }
 }

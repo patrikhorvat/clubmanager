@@ -10,6 +10,9 @@ export class TeamService {
   remove(id: number) {
     return this.apiService.delete("/shared/team/member/" + id);
   }
+  addTeamMember(teamId: number, memberId: number) {
+    return this.apiService.post("/shared/team/member/add/" + teamId + "/" + memberId);
+  }
 
 }
 

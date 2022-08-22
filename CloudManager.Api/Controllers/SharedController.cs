@@ -101,5 +101,31 @@ namespace CloudManager.Api.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        [Route("team/member/add/{teamId}/{memberId}")]
+        public async Task<IActionResult> AddTeamMember(int teamId, int memberId)
+        {
+            var authInfo = new AuthInfo();
+
+            var userId = User.GetUserId();
+
+            authInfo.UserId = userId;
+
+            var request = new AddTeamMemberRequest()
+            {
+                AuthInfo = authInfo,
+                RequestToken = Guid.NewGuid(),
+                TeamId = teamId,
+                MemberId = memberId
+            };
+
+            var response = await _repository.AddTeamMember(request);
+
+            if (!response.Success)
+                return BadRequest();
+
+            return Ok();
+        }
+
     }
 }

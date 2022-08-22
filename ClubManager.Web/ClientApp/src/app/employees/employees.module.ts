@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
+import { TeamService } from "../teams/teamService";
 import { CoachesOverviewComponent } from "./coaches/coaches-overview.component";
 import { EmployeeOverviewComponent } from "./employee-overview.component";
 import { EmployeeService } from "./employeeService";
@@ -66,7 +67,8 @@ const routes: Routes = [
   ],
   providers: [
     EmployeeService,
-    EmployeeManageResolver
+    EmployeeManageResolver,
+    TeamService
   ],
   entryComponents: [
     

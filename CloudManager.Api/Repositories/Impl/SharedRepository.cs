@@ -135,5 +135,39 @@ namespace CloudManager.Api.Repositories.Impl
             return response;
         }
 
+        public async Task<AddTeamMemberResponse> AddTeamMember(AddTeamMemberRequest request)
+        {
+            var response = new AddTeamMemberResponse()
+            {
+                ResponseToken = Guid.NewGuid(),
+                Request = request,
+                Success = true
+            };
+
+            try
+            {
+                var entity = new Entities.EmployeeTeam()
+                {
+                    DateFrom = DateTimeOffset.UtcNow,
+                    Employee = request.MemberId,
+                    Team = request.TeamId,
+                    IsCurrent = true,
+                    Active = true
+                };
+
+                await _dbContext.EmployeeTeams.AddAsync(entity);
+
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+                _logger.LogError(ex, "SharedRepository.AddTeamMember: Request={@Request}", request);
+            }
+
+            return response;
+        }
+
     }
 }

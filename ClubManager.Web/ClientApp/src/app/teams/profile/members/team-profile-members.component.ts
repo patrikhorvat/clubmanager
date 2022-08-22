@@ -18,10 +18,16 @@ export class TeamMembersOverviewComponent implements OnInit {
   @Input('team') team: any;
 
   constructor(
-    private router: Router, private apiService: ApiService, private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private apiService: ApiService,
+    private activatedRoute: ActivatedRoute,
     private alertService: AlertService,
     private service: TeamService) {
 
+    this.refreshGrid();
+  }
+
+  refreshGrid() {
     this.apiService.post("/employee/overview/members/" + this.activatedRoute.snapshot.params['id']).subscribe(x => {
       this.members = x.data;
     }, error => {
@@ -30,12 +36,6 @@ export class TeamMembersOverviewComponent implements OnInit {
       () => {
 
       });
-
-    this.refreshGrid();
-  }
-
-  refreshGrid() {
-
   }
 
   goToProfile(id) {
