@@ -163,7 +163,30 @@ namespace CloudManager.Api.Controllers
             return Ok(types);
         }
 
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var authInfo = new AuthInfo();
 
+            var userId = User.GetUserId();
+
+            authInfo.UserId = userId;
+
+            var request = new DeleteEntityRequest()
+            {
+                AuthInfo = authInfo,
+                RequestToken = Guid.NewGuid(),
+                EntityId = id
+            };
+
+            var response = await _assetRepository.DeleteAsset(request);
+
+            if (!response.Success)
+                return BadRequest();
+
+            return Ok();
+        }
 
     }
 }

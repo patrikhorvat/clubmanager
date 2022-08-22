@@ -438,5 +438,35 @@ namespace CloudManager.Api.Repositories.Impl
             return result;
         }
 
+        public async Task<DeleteEntityResponse> DeleteAsset(DeleteEntityRequest request)
+        {
+            var response = new DeleteEntityResponse()
+            {
+                ResponseToken = Guid.NewGuid(),
+                Request = request,
+                Success = true
+            };
+
+            try
+            {
+                var entity = await _dbContext.Assets
+               .SingleAsync(x => x.Id == request.EntityId);
+
+                entity.Active = false;
+                entity.LastModified = DateTimeOffset.UtcNow;
+                entity.UserLastModified = request.AuthInfo.UserId;
+
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+                _logger.LogError(ex, "AssetRepository.DeleteAsset: Request={@Request}", request);
+            }
+
+            return response;
+        }
+
     }
 }

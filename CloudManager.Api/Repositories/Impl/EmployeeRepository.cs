@@ -454,6 +454,35 @@ namespace CloudManager.Api.Repositories.Impl
             return response;
         }
 
+        public async Task<DeleteEntityResponse> DeleteEmployee(DeleteEntityRequest request)
+        {
+            var response = new DeleteEntityResponse()
+            {
+                ResponseToken = Guid.NewGuid(),
+                Request = request,
+                Success = true
+            };
+
+            try
+            {
+                var entity = await _dbContext.Employees
+               .SingleAsync(x => x.Id == request.EntityId);
+
+                entity.Active = false;
+                entity.LastModified = DateTimeOffset.UtcNow;
+                entity.UserLastModified = request.AuthInfo.UserId;
+
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.GetBaseException().Message;
+                _logger.LogError(ex, "EmployeeRepository.DeleteEmployee: Request={@Request}", request);
+            }
+
+            return response;
+        }
 
     }
 }

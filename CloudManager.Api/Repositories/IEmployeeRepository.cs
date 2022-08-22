@@ -20,5 +20,6 @@ namespace CloudManager.Api.Repositories
         Task<List<EmployeeTypeDto>> GetEmployeeTypes();
         Task<ManageEntityResponse<ManageEntityRequest<EmployeeDto>>> CreateEmployee(ManageEntityRequest<EmployeeDto> request);
         Task<ManageEntityResponse<ManageEntityRequest<EmployeeDto>>> UpdateEmployee(ManageEntityRequest<EmployeeDto> request);
+        Task<DeleteEntityResponse> DeleteEmployee(DeleteEntityRequest request);
     }
 }
